@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
 import RotatingText from "../animations/TextAnimations/RotatingText/RotatingText";
 
 const Links = [
@@ -35,8 +35,8 @@ const Links = [
     id: 5,
     media: "Gmail",
     display: "Gmail - Deepesh Sunuwar",
-    link: "https://www.linkedin.com/in/deepeshsunuwar/",
-    icon: <Linkedin size={18} />,
+    link: "sun.08deepesh@gmail.com",
+    icon: <Mail size={18} />,
   },
 ];
 
@@ -46,13 +46,18 @@ const ConnectWithMe = () => {
 
   const handleClick = () => {
     const currentLink = Links[currentIndex].link;
-    window.open(currentLink, "_blank");
+    if (Links[currentIndex].media === "Gmail") {
+      // Open default mail client
+      window.open(`mailto:${currentLink}`, "_blank");
+    } else {
+      window.open(currentLink, "_blank");
+    }
   };
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % Links.length);
-    }, 2000); // Match with RotatingText interval
+    }, 3000); // Match with RotatingText interval
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
@@ -63,12 +68,12 @@ const ConnectWithMe = () => {
     <div className="px-4 z-20">
       <button
         onClick={handleClick}
-        className="flex items-center gap-2 bg-primary text-background px-4 py-2 rounded-md transition hover:scale-105 hover:bg-secondary cursor-pointer"
+        className="flex items-center gap-2 bg-primary text-background px-4 py-2 rounded-4xl transition hover:scale-105 hover:bg-secondary cursor-pointer shadow-[0px_0px_70px_10px_rgba(248,109,63,0.4)]"
       >
         {Links[currentIndex].icon}
         <RotatingText
           texts={Links.map((link) => link.display)}
-          rotationInterval={2000}
+          rotationInterval={3000}
           animate={{ y: 0 }}
           exit={{ y: "-120%" }}
           initial={{ y: "100%" }}

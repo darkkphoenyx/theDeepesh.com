@@ -6,7 +6,7 @@ import Particles from "../animations/Backgrounds/Particles/Particles";
 
 const NavRoutes = [
   { id: 1, nav: "Home", link: "#home" },
-  { id: 2, nav: "About", link: "#about" },
+  { id: 2, nav: "Know Me", link: "#about" },
   { id: 3, nav: "Projects", link: "#projects" },
   { id: 4, nav: "Contact", link: "#contact" },
 ];
@@ -65,11 +65,11 @@ const Homepage = () => {
     <div className="bg-background text-primary">
       {/* NAVBAR */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled ? "backdrop-blur-xl shadow-sm" : "bg-background"
         }`}
       >
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-8">
           {/* Logo */}
           <div>
             <a
@@ -79,7 +79,12 @@ const Homepage = () => {
                 handleNavigation("#home");
               }}
             >
-              <h1 className="text-3xl font-bold">theDeepesh</h1>
+              <h1
+                className="text-2xl md:text-3xl font-bold"
+                style={{ fontFamily: "Priestacy" }}
+              >
+                theDeepesh
+              </h1>
             </a>
           </div>
 
@@ -144,7 +149,7 @@ const Homepage = () => {
       </nav>
 
       {/* PARTICLES BACKGROUND + SECTIONS */}
-      <div className="relative z-0">
+      <div className="relative z-20 bg-background">
         <Particles
           className="absolute inset-0 z-0"
           particleCount={600}
@@ -155,12 +160,12 @@ const Homepage = () => {
           alphaParticles
         />
         {/* Content sits on top of Particles */}
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10  px-8">
           <section id="home">
             <HeroSection />
           </section>
 
-          <section id="about" className="min-h-screen pt-24">
+          <section id="about">
             <AboutSection />
           </section>
 

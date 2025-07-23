@@ -156,3 +156,10 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
+
+@font-face {
+  font-family: "Priestacy";
+  src: url("/public/Priestacy.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
