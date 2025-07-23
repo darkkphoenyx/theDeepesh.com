@@ -62,14 +62,14 @@ const Homepage = () => {
   };
 
   return (
-    <div className="bg-background text-primary">
+    <div className="bg-background min-h-screen text-primary">
       {/* NAVBAR */}
       <nav
         className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled ? "backdrop-blur-xl shadow-sm" : "bg-background"
         }`}
       >
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-8">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
           {/* Logo */}
           <div>
             <a
@@ -152,7 +152,7 @@ const Homepage = () => {
       <div className="relative z-20 bg-background">
         <Particles
           className="absolute inset-0 z-0"
-          particleCount={600}
+          particleCount={1000}
           particleColors={["#FFA500", "#FFFF00"]}
           particleSpread={12}
           particleBaseSize={80}
@@ -160,7 +160,7 @@ const Homepage = () => {
           alphaParticles
         />
         {/* Content sits on top of Particles */}
-        <div className="relative z-10  px-8">
+        <div className="relative z-10 px-4">
           <section id="home">
             <HeroSection />
           </section>
@@ -168,8 +168,6 @@ const Homepage = () => {
           <section id="about">
             <AboutSection />
           </section>
-
-          {/* Add your other sections like projects, contact, etc. below */}
         </div>
       </div>
     </div>

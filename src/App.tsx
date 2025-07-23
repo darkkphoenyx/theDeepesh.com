@@ -15,6 +15,7 @@ function App() {
     <>
       <Cursor />
       <Homepage />
+      <div className="h-10 bg-background"></div>
     </>
   );
 }
