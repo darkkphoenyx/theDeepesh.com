@@ -1,13 +1,15 @@
-import CircularText from "../../animations/TextAnimations/CircularText/CircularText";
 import TextPressure from "../../animations/TextAnimations/TextPressure/TextPressure";
+import ConnectWithMe from "../../components/ConnectWithMe";
 
 const HeroSection = () => {
   return (
     <>
-      <div className="w-full text-center min-h-screen pt-20">
-        <h1 className="max-w-5xl w-full mx-auto">
+      <div className="relative w-full text-center h-screen flex flex-col items-center md:pt-20 space-y-10 md:space-y-16">
+        <img src="./profile.gif" alt="owner gif" />
+
+        <h1 className="max-w-2xl w-full mx-auto px-10 md:px-4">
           <TextPressure
-            text="Welcome Home!"
+            text="I'm Deepesh!"
             flex={true}
             alpha={false}
             stroke={false}
@@ -19,12 +21,12 @@ const HeroSection = () => {
           />
         </h1>
 
-        <CircularText
-          text="DEEPESH.SUNUWAR."
-          onHover="speedUp"
-          spinDuration={20}
-          className="custom-class"
-        />
+        <ConnectWithMe />
+        {/* <img
+          className="absolute top-0 left-1/2 transform -translate-x-1/2 disabled"
+          src="./profile.gif"
+          alt="owner gif"
+        /> */}
       </div>
     </>
   );

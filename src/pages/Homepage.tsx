@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import HeroSection from "../pages/sections/Hero-section";
 import AboutSection from "../pages/sections/About-section";
+import Particles from "../animations/Backgrounds/Particles/Particles";
 
 const NavRoutes = [
   { id: 1, nav: "Home", link: "#home" },
@@ -61,17 +62,25 @@ const Homepage = () => {
   };
 
   return (
-    <div>
+    <div className="bg-background text-primary">
       {/* NAVBAR */}
       <nav
-        className={`top-0 sticky z-30 transition-all duration-300 text-primary ${
+        className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled ? "backdrop-blur-xl shadow-sm" : "bg-background"
         }`}
       >
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
           {/* Logo */}
           <div>
-            <h1 className="text-3xl font-bold">theDeepesh</h1>
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("#home");
+              }}
+            >
+              <h1 className="text-3xl font-bold">theDeepesh</h1>
+            </a>
           </div>
 
           {/* Desktop Nav Links */}
@@ -134,27 +143,30 @@ const Homepage = () => {
         )}
       </nav>
 
-      {/* PAGE SECTIONS */}
-      <section id="home">
-        <HeroSection />
-      </section>
-      <section id="about">
-        <AboutSection />
-      </section>
-      <section id="projects" className="min-h-screen bg-gray-100">
-        <div className="max-w-7xl mx-auto py-20 px-4">
-          <h2 className="text-3xl font-bold mb-6">Projects</h2>
-          {/* Placeholder content */}
-          <p>Project content goes here...</p>
+      {/* PARTICLES BACKGROUND + SECTIONS */}
+      <div className="relative z-0">
+        <Particles
+          className="absolute inset-0 z-0"
+          particleCount={600}
+          particleColors={["#FFA500", "#FFFF00"]}
+          particleSpread={12}
+          particleBaseSize={80}
+          speed={0.2}
+          alphaParticles
+        />
+        {/* Content sits on top of Particles */}
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <section id="home">
+            <HeroSection />
+          </section>
+
+          <section id="about" className="min-h-screen pt-24">
+            <AboutSection />
+          </section>
+
+          {/* Add your other sections like projects, contact, etc. below */}
         </div>
-      </section>
-      <section id="contact" className="min-h-screen bg-gray-50">
-        <div className="max-w-7xl mx-auto py-20 px-4">
-          <h2 className="text-3xl font-bold mb-6">Contact</h2>
-          {/* Placeholder content */}
-          <p>Contact form or info goes here...</p>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
