@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import HeroSection from "../pages/sections/Hero-section";
-import AboutSection from "../pages/sections/About-section";
 import Particles from "../animations/Backgrounds/Particles/Particles";
+import AboutSection from "./sections/About-section";
+import Skills from "./sections/Skills";
 
 const NavRoutes = [
-  { id: 1, nav: "Home", link: "#home" },
-  { id: 2, nav: "Know Me", link: "#about" },
+  { id: 1, nav: "Know me", link: "#knowMe" },
+  { id: 2, nav: "Skills", link: "#skills" },
   { id: 3, nav: "Projects", link: "#projects" },
   { id: 4, nav: "Contact", link: "#contact" },
 ];
@@ -24,7 +25,7 @@ const Homepage = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
 
-      const sections = ["home", "about", "projects", "contact"];
+      const sections = ["knowMe", "skills", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -73,7 +74,7 @@ const Homepage = () => {
           {/* Logo */}
           <div>
             <a
-              href="#home"
+              href="#knowMe"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavigation("#home");
@@ -161,12 +162,13 @@ const Homepage = () => {
         />
         {/* Content sits on top of Particles */}
         <div className="relative z-10 px-4">
-          <section id="home">
+          <section id="knowMe">
             <HeroSection />
+            <AboutSection />
           </section>
 
-          <section id="about">
-            <AboutSection />
+          <section id="skills">
+            <Skills />
           </section>
         </div>
       </div>

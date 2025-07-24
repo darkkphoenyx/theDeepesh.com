@@ -4,7 +4,7 @@ import ConnectWithMe from "../../components/ConnectWithMe";
 const HeroSection = () => {
   return (
     <>
-      <div className="relative w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-10 md:space-y-16">
+      <section className="relative w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-10 md:space-y-16">
         <img src="./profile.gif" alt="owner gif" />
 
         <h1 className="hidden md:block relative max-w-4xl w-full mx-auto px-10 md:px-4">
@@ -45,7 +45,7 @@ const HeroSection = () => {
         </h1>
 
         <ConnectWithMe />
-      </div>
+      </section>
     </>
   );
 };

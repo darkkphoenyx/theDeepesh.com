@@ -1,18 +1,18 @@
+import { BookOpen, GraduationCap } from "lucide-react";
 import HoverPreview from "../../components/HoverPreview";
+import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
 
 const AboutSection = () => {
   return (
-    <section
-      id="about"
-      className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center justify-center gap-0 md:gap-8 md:px-4"
-    >
+    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center justify-center gap-0 md:gap-8 md:px-4">
       {/* Image Section */}
 
       {/* Text Section */}
       <div className="w-full md:w-1/2 text-center md:text-left">
         <h2
           data-aos="fade-up"
-          className="text-5xl font-bold mb-8 text-secondary"
+          className="text-5xl font-bold mb-12 text-secondary"
           style={{ fontFamily: "Priestacy" }}
         >
           Know Me
@@ -42,6 +42,33 @@ const AboutSection = () => {
           problem-solving, I enjoy owning projects end-to-end and continuously
           learning new technologies to deliver impactful and maintainable
           solutions.
+        </div>
+        <div className="md:mt-8 mt-16 space-y-4">
+          <h2
+            data-aos="fade-up"
+            className="flex items-center gap-2 font-medium text-2xl justify-center md:justify-start text-secondary"
+          >
+            <GraduationCap size={34} />
+            Education
+          </h2>
+          <Card
+            data-aos="fade-up"
+            data-aos-delay="70"
+            className="bg-gray-800 px-10 py-4 gap-2"
+          >
+            <CardTitle className="flex items-center gap-2 font-medium text-xl text-secondary">
+              BSc.CSIT
+            </CardTitle>
+            <div className="flex space-y-2 md:space-y-0 justify-between lg:items-center md:flex-row flex-col items-start">
+              <CardDescription className="text-gray-200 flex gap-2 text-start lg:text-center">
+                <BookOpen size={20} />
+                Tribhuvan University, Kathmandu - Nepal
+              </CardDescription>
+              <Badge className="rounded-4xl text-secondary border border-secondary/50 bg-secondary/10 p-2">
+                2022 - Present
+              </Badge>
+            </div>
+          </Card>
         </div>
       </div>
       <div

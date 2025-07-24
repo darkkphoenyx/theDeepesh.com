@@ -159,7 +159,7 @@
 
 @font-face {
   font-family: "Priestacy";
-  src: url("/public/Priestacy.otf") format("truetype");
+  src: url("/Priestacy.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
