@@ -5,7 +5,7 @@ import { Badge } from "../../components/ui/badge";
 
 const AboutSection = () => {
   return (
-    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center justify-center gap-0 md:gap-8 md:px-4">
+    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 md:px-4">
       {/* Image Section */}
 
       {/* Text Section */}
@@ -53,7 +53,7 @@ const AboutSection = () => {
           </h2>
           <Card
             data-aos="fade-up"
-            data-aos-delay="70"
+            data-aos-delay="30"
             className="bg-gray-800 px-10 py-4 gap-2"
           >
             <CardTitle className="flex items-center gap-2 font-medium text-xl text-secondary">
@@ -71,11 +71,7 @@ const AboutSection = () => {
           </Card>
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-delay="50"
-        className="w-full md:w-1/2 flex justify-center"
-      >
+      <div className="w-full md:w-1/2 flex justify-center">
         <img
           src="./theDeepesh.png"
           alt="owner profile"

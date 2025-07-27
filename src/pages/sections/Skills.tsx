@@ -1,5 +1,7 @@
+import { Facebook } from "lucide-react";
 import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
 import { CardCarousel } from "../../components/ui/card-carousel";
+import FlipLink from "../../components/ui/text-effect-flipper";
 const images = [
   {
     logo: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
@@ -178,6 +180,11 @@ const Skills = () => {
         <div className="w-full h-[500px]">
           <FlowingMenu items={demoItems} />
         </div>
+
+        {/* <div className="p-4 text-center text-primary flex justify-center items-center">
+          <Facebook size={80} className="" />
+          <FlipLink href="https://x.com/guri_who"> Behance</FlipLink>
+        </div> */}
       </section>
     </>
   );

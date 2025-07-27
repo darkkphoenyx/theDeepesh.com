@@ -115,7 +115,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, subHeader }) => {
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 2 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        <span className="text-[#060010] uppercase font-normal text-4xl w-full">
+        <span className="text-background uppercase font-normal text-xl md:text-4xl w-full">
           {subHeader}
         </span>
       </React.Fragment>
