@@ -1,3 +1,4 @@
+import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
 import { CardCarousel } from "../../components/ui/card-carousel";
 const images = [
   {
@@ -116,10 +117,37 @@ const images = [
     text: "MySql",
   },
 ];
+const demoItems = [
+  {
+    link: "#",
+    text: "Adapt",
+    subHeader: "New tech? I evolve fast.",
+    image: "https://picsum.photos/600/400?random=1",
+  },
+  {
+    link: "#",
+    text: "Lead ",
+    subHeader: "Whether it’s code or a team, I take initiative.",
+    image: "https://picsum.photos/600/400?random=2",
+  },
+  {
+    link: "#",
+    text: "Spark ",
+    subHeader: "Hackathons fuel my fire",
+    image: "https://picsum.photos/600/400?random=3",
+  },
+  {
+    link: "#",
+    text: "Flow ",
+    subHeader: "When I code, I lose sense of time.",
+    image: "https://picsum.photos/600/400?random=4",
+  },
+];
+
 const Skills = () => {
   return (
     <>
-      <section className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:pt-20 pt-16 md:mt-20">
+      <section className="h-screen mx-auto px-3 flex flex-col md:pt-20 pt-16 md:mt-20 w-full">
         <h1
           data-aos="fade-up"
           className="text-5xl font-semibold text-center text-secondary"
@@ -127,7 +155,11 @@ const Skills = () => {
         >
           My Skills
         </h1>
-        <div data-aos="fade-up" data-aos-delay="30" className="w-full mt-20">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="30"
+          className="max-w-7xl mx-auto w-full mt-20"
+        >
           <CardCarousel
             images={images}
             autoplayDelay={2000}
@@ -143,6 +175,9 @@ const Skills = () => {
             slideShadows={false}
           />
         </div> */}
+        <div className="w-full h-[500px]">
+          <FlowingMenu items={demoItems} />
+        </div>
       </section>
     </>
   );

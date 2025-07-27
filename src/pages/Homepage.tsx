@@ -77,7 +77,7 @@ const Homepage = () => {
               href="#knowMe"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavigation("#home");
+                handleNavigation("#knowMe");
               }}
             >
               <h1
@@ -170,6 +170,7 @@ const Homepage = () => {
           <section id="skills">
             <Skills />
           </section>
+          {/* <div className="h-20 bg-background"></div> */}
         </div>
       </div>
     </div>
