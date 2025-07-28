@@ -128,7 +128,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, subHeader }) => {
       ref={itemRef}
     >
       <h2
-        className={`flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-primary text-[4vh] hover:text-background transition-opacity duration-300 ${
+        className={`flex items-center justify-center h-full relative uppercase no-underline font-semibold text-primary text-[4vh] hover:text-background transition-opacity duration-300 ${
           textVisible ? "opacity-100" : "opacity-0"
         }`}
         onMouseEnter={handleMouseEnter}

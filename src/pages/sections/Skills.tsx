@@ -149,7 +149,7 @@ const demoItems = [
 const Skills = () => {
   return (
     <>
-      <section className="h-screen mx-auto px-3 flex flex-col md:pt-20 pt-16 md:mt-20 w-full">
+      <section className="h-screen mx-auto max-w-7xl flex flex-col md:pt-20 pt-16 md:mt-20 w-full">
         <h1
           data-aos="fade-up"
           className="text-5xl font-semibold text-center text-secondary"

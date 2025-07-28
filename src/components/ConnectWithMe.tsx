@@ -65,10 +65,10 @@ const ConnectWithMe = () => {
   }, []);
 
   return (
-    <div className="px-4 z-20">
+    <div data-aos="fade-up" data-aos-delay="50" className="px-4 z-20">
       <button
         onClick={handleClick}
-        className="flex items-center gap-2 bg-primary text-background px-4 py-2 rounded-4xl transition hover:scale-105 hover:bg-secondary cursor-pointer shadow-[0px_0px_70px_10px_rgba(248,109,63,0.4)]"
+        className="flex items-center gap-2 bg-primary text-background px-4 py-2 rounded-4xl transition hover:scale-105 hover:bg-secondary cursor-none shadow-[0px_0px_70px_10px_rgba(248,109,63,0.4)]"
       >
         {Links[currentIndex].icon}
         <RotatingText

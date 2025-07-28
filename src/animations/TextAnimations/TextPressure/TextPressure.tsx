@@ -167,6 +167,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
   return (
     <div
+      data-aos="fade-up"
+      data-aos-duration="1100"
       ref={containerRef}
       className="relative w-full h-full overflow-hidden bg-transparent"
     >

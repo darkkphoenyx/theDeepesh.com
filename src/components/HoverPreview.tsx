@@ -19,7 +19,7 @@ const HoverPreview: React.FC<HoverPreviewProps> = ({ label, url }) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="border-b-2 cursor-pointer hover:text-secondary"
+        className="border-b-2 cursor-none hover:text-secondary"
       >
         {label}
       </a>
@@ -32,7 +32,7 @@ const HoverPreview: React.FC<HoverPreviewProps> = ({ label, url }) => {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute z-50 bottom-full mb-2 left-0 w-[200px] h-[130px] border border-secondary shadow-lg rounded-md bg-secondary hidden md:block"
+          className="cursor-none absolute z-50 bottom-full mb-2 left-0 w-[200px] h-[130px] border border-secondary shadow-lg rounded-md bg-secondary hidden md:block"
         >
           <iframe
             src={url}

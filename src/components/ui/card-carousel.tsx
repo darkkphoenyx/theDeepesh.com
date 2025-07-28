@@ -96,7 +96,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                 {images.map((image, index) => (
                   <SwiperSlide key={index}>
                     <div
-                      className={`relative ${image.background} rounded-3xl flex items-center flex-col justify-center h-[200px] space-y-4`}
+                      className={`cursor-none relative ${image.background} rounded-3xl flex items-center flex-col justify-center h-[200px] space-y-4`}
                     >
                       <div className="h-20 w-20 overflow-hidden rounded-3xl shadow-[0px_0px_20px_5px_rgba(0,0,0,0.5)]">
                         <img
@@ -117,7 +117,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                 {images.map((image, index) => (
                   <SwiperSlide key={index}>
                     <div
-                      className={`relative ${image.background} rounded-3xl flex items-center flex-col justify-center h-[200px] space-y-4`}
+                      className={`cursor-none relative ${image.background} rounded-3xl flex items-center flex-col justify-center h-[200px] space-y-4`}
                     >
                       <div className="h-20 w-20 overflow-hidden rounded-3xl shadow-[0px_0px_20px_5px_rgba(0,0,0,0.5)]">
                         <img

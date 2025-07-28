@@ -4,8 +4,8 @@ import ConnectWithMe from "../../components/ConnectWithMe";
 const HeroSection = () => {
   return (
     <>
-      <section className="relative w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-10 md:space-y-16">
-        <img src="./profile.gif" alt="owner gif" />
+      <section className="relative w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-10 md:space-y-16 px-4">
+        <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" />
 
         <h1 className="hidden md:block relative max-w-4xl w-full mx-auto px-10 md:px-4">
           <span
@@ -30,6 +30,7 @@ const HeroSection = () => {
         <h1 className="block md:hidden relative w-full">
           <span
             data-aos="fade-up"
+            data-aos-once="true"
             className="absolute left-1/2 md:-top-3 -top-7 -translate-x-1/2 text-center text-secondary text-4xl z-10"
             style={{ fontFamily: "Priestacy" }}
           >
@@ -37,7 +38,8 @@ const HeroSection = () => {
           </span>
           <p
             data-aos="fade-up"
-            data-aos-delay="30"
+            data-aos-once="true"
+            data-aos-duration="1200"
             className="text-5xl font-bold w-full"
           >
             I'M DEEPESH

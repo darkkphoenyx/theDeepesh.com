@@ -5,20 +5,20 @@ import { Badge } from "../../components/ui/badge";
 
 const AboutSection = () => {
   return (
-    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 md:px-4">
+    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
       {/* Image Section */}
 
       {/* Text Section */}
       <div className="w-full md:w-1/2 text-center md:text-left">
         <h2
-          data-aos="fade-up"
+          data-aos="fade-right"
           className="text-5xl font-bold mb-12 text-secondary"
           style={{ fontFamily: "Priestacy" }}
         >
           Know Me
         </h2>
         <div
-          data-aos="fade-up"
+          data-aos="fade-right"
           data-aos-delay="50"
           className="text-lg leading-relaxed max-w-xl mx-auto md:mx-0"
         >
@@ -45,14 +45,14 @@ const AboutSection = () => {
         </div>
         <div className="md:mt-8 mt-16 space-y-4">
           <h2
-            data-aos="fade-up"
+            data-aos="fade-right"
             className="flex items-center gap-2 font-medium text-2xl justify-center md:justify-start text-secondary"
           >
             <GraduationCap size={34} />
             Education
           </h2>
           <Card
-            data-aos="fade-up"
+            data-aos="fade-right"
             data-aos-delay="30"
             className="bg-gray-800 px-10 py-4 gap-2"
           >
@@ -71,7 +71,7 @@ const AboutSection = () => {
           </Card>
         </div>
       </div>
-      <div className="w-full md:w-1/2 flex justify-center">
+      <div data-aos="fade-left" className="w-full md:w-1/2 flex justify-center">
         <img
           src="./theDeepesh.png"
           alt="owner profile"

@@ -81,7 +81,10 @@ const Homepage = () => {
               }}
             >
               <h1
-                className="text-2xl md:text-3xl font-bold"
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-once="true"
+                className="text-2xl md:text-3xl font-bold cursor-none"
                 style={{ fontFamily: "Priestacy" }}
               >
                 theDeepesh
@@ -92,11 +95,16 @@ const Homepage = () => {
           {/* Desktop Nav Links */}
           <div className="hidden md:block">
             <ul className="flex gap-10 text-lg">
-              {NavRoutes.map((link) => (
-                <li key={link.id}>
+              {NavRoutes.map((link, index) => (
+                <li
+                  data-aos="fade-down"
+                  data-aos-delay={`${index * 50}`}
+                  data-aos-once="true"
+                  key={link.id}
+                >
                   <a
                     href={link.link}
-                    className={`transition hover:text-secondary ${
+                    className={`transition hover:text-secondary cursor-none ${
                       activeSection === link.link.slice(1)
                         ? "font-medium text-secondary"
                         : ""
@@ -125,8 +133,13 @@ const Homepage = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 w-full">
             <ul className="flex flex-col gap-4">
-              {NavRoutes.map((link) => (
-                <li key={link.id}>
+              {NavRoutes.map((link, index) => (
+                <li
+                  data-aos="fade-left"
+                  data-aos-delay={`${index * 50}`}
+                  data-aos-duration="400"
+                  key={link.id}
+                >
                   <a
                     href={link.link}
                     className={`block w-full py-2 ${
@@ -161,7 +174,7 @@ const Homepage = () => {
           alphaParticles
         />
         {/* Content sits on top of Particles */}
-        <div className="relative z-10 px-4">
+        <div className="relative z-10">
           <section id="knowMe">
             <HeroSection />
             <AboutSection />
