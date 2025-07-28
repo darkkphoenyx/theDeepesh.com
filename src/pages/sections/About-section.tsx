@@ -5,7 +5,7 @@ import { Badge } from "../../components/ui/badge";
 
 const AboutSection = () => {
   return (
-    <section className="w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
+    <section className="overflow-x-hidden w-full min-h-screen max-w-7xl py-4 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
       {/* Image Section */}
 
       {/* Text Section */}

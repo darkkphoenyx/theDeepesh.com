@@ -47,7 +47,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   
   @media screen and (max-height:900px){
   .swiper-slide{
-    width:260px}
+    width:280px}
   }
   
   .swiper-3d .swiper-slide-shadow-left {
