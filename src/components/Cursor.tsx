@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -14,7 +14,7 @@ const Cursor = () => {
     return () => {};
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.to("#cursor", {
       x: mousePosition.x,
       y: mousePosition.y,

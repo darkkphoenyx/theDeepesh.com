@@ -5,7 +5,7 @@ import ConnectWithMe from "../../components/ConnectWithMe";
 const HeroSection = () => {
   return (
     <>
-      <div className="min-h-screen relative overflow-hidden">
+      <div className="h-screen relative overflow-hidden">
         <section className="fixed -z-10 w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4">
           <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" />
 
@@ -55,6 +55,14 @@ const HeroSection = () => {
           text="scrolldown"
         />
       </div>
+      <p
+        className="absolute hidden md:block -right-100 mt-105 transform rotate-90 text-7xl font-bold m-0 p-0"
+        style={{ letterSpacing: "30px" }}
+      >
+        Keep Scrolling
+      </p>
+
+      <div className="h-[50vh] hidden md:block"></div>
     </>
   );
 };

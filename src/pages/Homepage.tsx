@@ -161,9 +161,9 @@ const Homepage = () => {
           </div>
         )}
       </nav>
-
       {/* PARTICLES BACKGROUND + SECTIONS */}
       <div className="relative z-20 bg-background">
+        <div className="absolute left-0 top-[50%]">Bummer</div>
         <Particles
           className="absolute inset-0 z-0"
           particleCount={1000}
