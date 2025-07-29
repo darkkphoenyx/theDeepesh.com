@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/ts/tailwind/
-*/
-
 import React, { useEffect } from "react";
 import {
   motion,
@@ -34,14 +30,14 @@ const getTransition = (duration: number, from: number) => ({
   rotate: getRotationTransition(duration, from),
   scale: {
     type: "spring" as const,
-    damping: 20,
+    damping: 10,
     stiffness: 300,
   },
 });
 
 const CircularText: React.FC<CircularTextProps> = ({
   text,
-  spinDuration = 20,
+  spinDuration = 10,
   onHover = "speedUp",
   className = "",
 }) => {
@@ -105,7 +101,7 @@ const CircularText: React.FC<CircularTextProps> = ({
 
   return (
     <motion.div
-      className={`m-0 mx-auto rounded-full w-[200px] h-[200px] relative font-black text-white text-center cursor-pointer origin-center ${className}`}
+      className={`m-0 z-20 mx-auto rounded-full w-[150px] h-[150px] relative font-black text-primary text-center cursor-pointer origin-center ${className}`}
       style={{ rotate: rotation }}
       initial={{ rotate: 0 }}
       animate={controls}
@@ -121,6 +117,7 @@ const CircularText: React.FC<CircularTextProps> = ({
 
         return (
           <span
+            data-aos="zoom-in"
             key={i}
             className="absolute inline-block inset-0 text-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
             style={{ transform, WebkitTransform: transform }}

@@ -76,7 +76,7 @@ const AboutSection = () => {
         </div>
         <div
           data-aos="fade-left"
-          className="w-full md:w-1/2 flex justify-center"
+          className="w-full md:w-1/2 flex justify-center h-max"
         >
           <img
             src="./theDeepesh.png"

@@ -1,10 +1,11 @@
+import CircularText from "../../animations/TextAnimations/CircularText/CircularText";
 import TextPressure from "../../animations/TextAnimations/TextPressure/TextPressure";
 import ConnectWithMe from "../../components/ConnectWithMe";
 
 const HeroSection = () => {
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen relative overflow-hidden">
         <section className="fixed -z-10 w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4">
           <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" />
 
@@ -49,6 +50,10 @@ const HeroSection = () => {
 
           <ConnectWithMe />
         </section>
+        <CircularText
+          className="hidden md:block absolute transform -translate-x-1/2 left-1/2 -bottom-180 z-0"
+          text="scrolldown"
+        />
       </div>
     </>
   );
