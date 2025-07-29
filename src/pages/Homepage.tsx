@@ -173,6 +173,7 @@ const Homepage = () => {
           speed={0.2}
           alphaParticles
         />
+
         {/* Content sits on top of Particles */}
         <div className="relative z-10">
           <section id="knowMe">
@@ -181,6 +182,15 @@ const Homepage = () => {
           </section>
 
           <section id="skills">
+            <Particles
+              className="absolute inset-0 z-0"
+              particleCount={1000}
+              particleColors={["#FFA500", "#FFFF00"]}
+              particleSpread={12}
+              particleBaseSize={80}
+              speed={0.2}
+              alphaParticles
+            />
             <Skills />
           </section>
           {/* <div className="h-20 bg-background"></div> */}

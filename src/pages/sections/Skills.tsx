@@ -1,7 +1,5 @@
-import { Facebook } from "lucide-react";
 import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
 import { CardCarousel } from "../../components/ui/card-carousel";
-import FlipLink from "../../components/ui/text-effect-flipper";
 const images = [
   {
     logo: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
@@ -149,43 +147,45 @@ const demoItems = [
 const Skills = () => {
   return (
     <>
-      <section className="h-screen mx-auto max-w-7xl flex flex-col md:pt-20 pt-16 md:mt-20 w-full">
-        <h1
-          data-aos="fade-up"
-          className="text-5xl font-semibold text-center text-secondary"
-          style={{ fontFamily: "Priestacy" }}
-        >
-          My Skills
-        </h1>
-        <div
-          data-aos="fade-up"
-          data-aos-delay="30"
-          className="max-w-7xl mx-auto w-full mt-20"
-        >
-          <CardCarousel
-            images={images}
-            autoplayDelay={2000}
-            showPagination={true}
-            showNavigation={true}
-          />
-        </div>
-        {/*card carousel */}
-        {/* <div className="w-full">
+      <div className="bg-background">
+        <section className="h-screen mx-auto max-w-7xl flex flex-col md:pt-40 pt-16 w-full">
+          <h1
+            data-aos="fade-up"
+            className="text-5xl font-semibold text-center text-secondary"
+            style={{ fontFamily: "Priestacy" }}
+          >
+            My Skills
+          </h1>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="30"
+            className="max-w-7xl mx-auto w-full mt-20"
+          >
+            <CardCarousel
+              images={images}
+              autoplayDelay={2000}
+              showPagination={true}
+              showNavigation={true}
+            />
+          </div>
+          {/*card carousel */}
+          {/* <div className="w-full">
           <CardSwipe
-            images={images}
-            autoplayDelay={2000}
-            slideShadows={false}
+          images={images}
+          autoplayDelay={2000}
+          slideShadows={false}
           />
-        </div> */}
-        <div className="w-full h-[500px]">
-          <FlowingMenu items={demoItems} />
-        </div>
+          </div> */}
+          <div className="w-full h-[500px]">
+            <FlowingMenu items={demoItems} />
+          </div>
 
-        {/* <div className="p-4 text-center text-primary flex justify-center items-center">
+          {/* <div className="p-4 text-center text-primary flex justify-center items-center">
           <Facebook size={80} className="" />
           <FlipLink href="https://x.com/guri_who"> Behance</FlipLink>
-        </div> */}
-      </section>
+          </div> */}
+        </section>
+      </div>
     </>
   );
 };
