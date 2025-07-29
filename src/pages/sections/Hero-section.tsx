@@ -1,12 +1,38 @@
+import { useTransform, motion, useScroll } from "framer-motion";
 import CircularText from "../../animations/TextAnimations/CircularText/CircularText";
 import TextPressure from "../../animations/TextAnimations/TextPressure/TextPressure";
 import ConnectWithMe from "../../components/ConnectWithMe";
+import { useLayoutEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      setIsMobileMenuOpen(window.scrollY >= 250);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const zIndex = useTransform(
+    scrollYProgress,
+    [0, isMobileMenuOpen ? 1 : 0.4],
+    [10, isMobileMenuOpen ? -100 : -10]
+  );
+
   return (
     <>
       <div className="h-screen relative overflow-hidden">
-        <section className="fixed -z-10 w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4">
+        <motion.section
+          style={{ zIndex: zIndex }}
+          className="fixed w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4"
+        >
           <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" />
 
           <h1 className="hidden md:block relative max-w-4xl w-full mx-auto px-10 md:px-4">
@@ -48,15 +74,17 @@ const HeroSection = () => {
             </p>
           </h1>
 
-          <ConnectWithMe />
-        </section>
+          <motion.div>
+            <ConnectWithMe />
+          </motion.div>
+        </motion.section>
         <CircularText
           className="hidden md:block absolute transform -translate-x-1/2 left-1/2 -bottom-180 z-0"
           text="scrolldown"
         />
       </div>
       <p
-        className="absolute hidden md:block -right-100 mt-105 transform rotate-90 text-7xl font-bold m-0 p-0"
+        className="absolute hidden md:block -right-100 mt-105 transform rotate-90 text-7xl font-bold m-0 p-0 mix-blend-luminosity"
         style={{ letterSpacing: "30px" }}
       >
         Keep Scrolling

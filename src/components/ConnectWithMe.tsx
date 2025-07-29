@@ -69,7 +69,7 @@ const ConnectWithMe = () => {
       data-aos="fade-up"
       data-aos-delay="50"
       data-aos-once="true"
-      className="px-4 z-20"
+      className="px-4"
     >
       <button
         onClick={handleClick}
