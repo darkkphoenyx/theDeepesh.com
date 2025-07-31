@@ -147,8 +147,8 @@ const demoItems = [
 const Skills = () => {
   return (
     <>
-      <div className="bg-background">
-        <section className="h-screen mx-auto max-w-7xl flex flex-col md:pt-40 pt-16 w-full">
+      <div className="bg-gray-800 md:pt-30 pt-16">
+        <section className="h-auto mx-auto max-w-7xl flex flex-col  w-full">
           <h1
             data-aos="fade-up"
             className="text-5xl font-semibold text-center text-secondary"
@@ -176,7 +176,7 @@ const Skills = () => {
           slideShadows={false}
           />
           </div> */}
-          <div className="w-full h-[500px]">
+          <div className="w-full md:h-[600px] h-[500px]">
             <FlowingMenu items={demoItems} />
           </div>
 

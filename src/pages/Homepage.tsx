@@ -4,11 +4,12 @@ import HeroSection from "../pages/sections/Hero-section";
 import Particles from "../animations/Backgrounds/Particles/Particles";
 import AboutSection from "./sections/About-section";
 import Skills from "./sections/Skills";
+import ProjectSection from "./sections/Project-section";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "#knowMe" },
-  { id: 2, nav: "Skills", link: "#skills" },
-  { id: 3, nav: "Projects", link: "#projects" },
+  { id: 2, nav: "Projects", link: "#projects" },
+  { id: 3, nav: "Skills", link: "#skills" },
   { id: 4, nav: "Contact", link: "#contact" },
 ];
 
@@ -25,7 +26,7 @@ const Homepage = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
 
-      const sections = ["knowMe", "skills", "projects", "contact"];
+      const sections = ["knowMe", "projects", "skills", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -163,10 +164,9 @@ const Homepage = () => {
       </nav>
       {/* PARTICLES BACKGROUND + SECTIONS */}
       <div className="relative z-20 bg-background">
-        <div className="absolute left-0 top-[50%]">Bummer</div>
         <Particles
           className="absolute inset-0 z-0"
-          particleCount={1000}
+          particleCount={5000}
           particleColors={["#FFA500", "#FFFF00"]}
           particleSpread={12}
           particleBaseSize={80}
@@ -181,18 +181,14 @@ const Homepage = () => {
             <AboutSection />
           </section>
 
+          <section id="projects">
+            <ProjectSection />
+          </section>
+
           <section id="skills">
-            <Particles
-              className="absolute inset-0 z-0"
-              particleCount={1000}
-              particleColors={["#FFA500", "#FFFF00"]}
-              particleSpread={12}
-              particleBaseSize={80}
-              speed={0.2}
-              alphaParticles
-            />
             <Skills />
           </section>
+
           {/* <div className="h-20 bg-background"></div> */}
         </div>
       </div>

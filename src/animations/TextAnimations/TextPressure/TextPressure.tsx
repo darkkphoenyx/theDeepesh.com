@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/ts/tailwind/
-*/
-
 import { useEffect, useRef, useState } from "react";
 
 interface TextPressureProps {
