@@ -40,7 +40,6 @@ const MyProjects: IMyProjects[] = [
     details:
       "Just Do It! is a full-stack task manager that lets you organize tasks, filter by status, and search efficiently. With offline support and a responsive design, it ensures seamless access and security for all your tasks.",
     techStack: ["React", "Tailwind", "NodeJS", "Typescript", "PostgreSQL"],
-    deployLink: "https://bookwormlibrary.vercel.app/",
   },
   {
     id: 4,

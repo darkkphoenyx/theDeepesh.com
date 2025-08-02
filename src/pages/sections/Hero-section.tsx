@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   useLayoutEffect(() => {
     const handleScroll = () => {
-      setIsMobileMenuOpen(window.scrollY >= 250);
+      setIsMobileMenuOpen(window.scrollY >= 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,7 +22,7 @@ const HeroSection = () => {
 
   const zIndex = useTransform(
     scrollYProgress,
-    [0, isMobileMenuOpen ? 1 : 0.4],
+    [0, isMobileMenuOpen ? 0.35 : 1],
     [10, isMobileMenuOpen ? -100 : -10]
   );
 
@@ -31,7 +31,9 @@ const HeroSection = () => {
       <div className="h-screen relative overflow-hidden">
         <motion.section
           style={{ zIndex: zIndex }}
-          className="fixed w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4"
+          className={`fixed w-full text-center min-h-screen flex flex-col items-center md:pt-20 space-y-12 md:space-y-16 px-4 ${
+            isMobileMenuOpen ? "-z-10" : "z-10"
+          }`}
         >
           <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" />
 
@@ -80,7 +82,7 @@ const HeroSection = () => {
         </motion.section>
         <CircularText
           className="hidden md:block absolute transform -translate-x-1/2 left-1/2 -bottom-180 z-0"
-          text="scrolldown"
+          text="SCROLL*DOWN*"
         />
       </div>
       <p

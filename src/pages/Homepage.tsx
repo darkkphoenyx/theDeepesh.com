@@ -68,7 +68,7 @@ const Homepage = () => {
       {/* NAVBAR */}
       <nav
         className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrolled ? "backdrop-blur-xl shadow-sm" : "bg-background"
+          scrolled ? "backdrop-blur-xl shadow-sm bg-background/50" : "bg-background"
         }`}
       >
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
