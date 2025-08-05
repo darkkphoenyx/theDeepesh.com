@@ -13,7 +13,7 @@ const AboutSection = () => {
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2
             data-aos="fade-right"
-            className="text-5xl font-bold mb-12 text-secondary"
+            className="md:text-5xl text-4xl font-bold mb-12 text-secondary"
             style={{ fontFamily: "Priestacy" }}
           >
             Know Me
@@ -58,13 +58,13 @@ const AboutSection = () => {
             <Card
               data-aos="fade-right"
               data-aos-delay="30"
-              className="bg-gray-800 px-10 py-4 gap-2 border-secondary"
+              className="bg-gray-800 px-10 py-4 rounded-3xl gap-2 border-secondary"
             >
               <CardTitle className="flex items-center gap-2 font-medium text-xl text-secondary">
                 BSc.CSIT
               </CardTitle>
               <div className="flex space-y-2 md:space-y-0 justify-between lg:items-center md:flex-row flex-col items-start">
-                <CardDescription className="text-gray-200 flex gap-2 text-start lg:text-center">
+                <CardDescription className="text-gray-300 flex gap-2 text-start lg:text-center">
                   <BookOpen size={20} />
                   Tribhuvan University, Kathmandu - Nepal
                 </CardDescription>
@@ -85,7 +85,6 @@ const AboutSection = () => {
             className="w-full max-w-md h-auto object-contain"
           />
         </div>
-        {/* <div className="h-20 bg-background"></div> */}
       </section>
     </div>
   );

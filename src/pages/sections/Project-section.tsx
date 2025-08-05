@@ -31,11 +31,11 @@ const ProjectSection = () => {
   }, []);
   return (
     <section className="bg-background">
-      <div className="max-w-7xl mx-auto px-4 pt-24 h-auto overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 py-24 h-auto overflow-hidden">
         <div className="md:mb-16">
           <h1
             data-aos="fade-up"
-            className="text-4xl text-secondary font-extrabold text-center mb-4"
+            className="md:text-5xl text-3xl text-secondary font-extrabold text-center mb-4"
             style={{ fontFamily: "Priestacy" }}
           >
             Project Section
@@ -48,81 +48,48 @@ const ProjectSection = () => {
             Each project is a unique piece of development
           </h1>
         </div>
-        {projectData.map((project) => (
-          <div
-            className="grid md:grid-cols-2 md:gap-8 md:space-y-20 space-y-8 border-b-2 md:border-none h-auto md:mb-0 mb-12 md:p-0 pb-4"
-            dir={`${projectData.indexOf(project) % 2 === 0 ? "ltr" : "rtl"}`}
-            key={project.$id}
-          >
+        <div className="grid md:grid-cols-3 gap-8">
+          {projectData.map((project, index) => (
             <Card
-              data-aos="fade-right"
-              data-aos-delay="30"
-              className="w-full md:h-[400px] h-[300px] p-0 rounded-4xl border-none shadow-none"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 50}`}
+              className="p-8 hover:bg-gradient-to-b from-primary/30 to-transparent rounded-3xl shadow-none hover:border-primary border-gray-600 bg-gray-800 transition-all hover:text-primary text-white"
+              key={project.$id}
             >
-              <img
-                className="w-full h-full rounded-3xl object-center object-cover"
-                src={project.image}
-                alt={`${project.name} image`}
-              />
-            </Card>
-
-            <Card
-              data-aos="fade-left"
-              className="bg-transparent md:h-[400px] h-[330px] border-none shadow-none text-primary flex justify-center items-center md:p-4 md:gap-8"
-            >
-              <CardTitle
-                dir="ltr"
-                className="text-3xl font-semibold p-0 text-center"
-              >
+              <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center">
                 {project.name}
               </CardTitle>
-              <CardDescription
-                dir="ltr"
-                className="text-primary p-0 text-center"
-              >
+              <CardDescription className="text-gray-300 p-0 md:text-start text-center line-clamp-3 overflow-ellipsis">
                 {project.details}
               </CardDescription>
-              <ul
-                dir="ltr"
-                className="flex gap-4 items-center justify-center flex-wrap"
-              >
-                {project.techStack.map((stack) => (
+              <ul className="flex gap-2 md:justify-start items-center justify-center flex-wrap">
+                {project.techStack.slice(0, 4).map((stack) => (
                   <li
-                    className="font-medium text-xl text-secondary hover:-translate-y-1 transition-all hover:text-accent"
+                    className="px-3 py-2 text-sm text-secondary bg-secondary/10 rounded-full hover:text-primary hover:bg-secondary/20 hover:scale-105 transition-all"
                     key={stack}
                   >
                     {stack}
                   </li>
                 ))}
-              </ul>
-              <div
-                dir="ltr"
-                className="flex justify-center md:gap-12 gap-8 w-full items-center"
-              >
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="flex gap-2 text-xl md:text-3xl items-center cursor-none hover:scale-105 hover:text-secondary w-full">
-                    GitHub <GithubIcon size={30} />
+                {project.techStack.length > 4 && (
+                  <button className="px-3 py-2 text-sm text-secondary bg-secondary/10 rounded-full hover:text-primary hover:bg-secondary/20 hover:scale-105 transition-all">
+                    + {project.techStack.length - 4} more
                   </button>
-                </a>
-                {project.deployLink && (
-                  <a
-                    href={project.deployLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="flex gap-2 text-xl md:text-3xl items-center cursor-none hover:scale-105 hover:text-secondary w-full">
-                      Live Demo <Eye size={30} />
-                    </button>
-                  </a>
                 )}
-              </div>
+              </ul>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="flex items-center justify-center gap-2 border-none w-full rounded-full px-3 py-2 bg-primary/20 hover:bg-primary/40 hover:scale-105 transition-all font-medium text-primary">
+                  View Project
+                  <GithubIcon />
+                </button>
+              </a>
             </Card>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className="h-1 bg-background"></div>
     </section>
