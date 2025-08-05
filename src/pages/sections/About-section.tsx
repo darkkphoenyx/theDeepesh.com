@@ -32,6 +32,7 @@ const AboutSection = () => {
             />
             ,{" "}
             <HoverPreview label="Tailwind CSS" url="https://tailwindcss.com/" />
+            , <HoverPreview label="ShadCN" url="https://ui.shadcn.com/" />
             . I focus on building clean, responsive, and scalable user
             interfaces with reusable components and optimized performance.
             <br />
