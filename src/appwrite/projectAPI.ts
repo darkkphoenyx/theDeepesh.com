@@ -14,72 +14,27 @@ export class Projects {
     this.storage = new Storage(this.client);
   }
 
-  //services
-
-  //get all projects
-  async getAllProjectDetails() {
+  // Services
+  getProjectDetails = async (type: string) => {
     try {
+      if (type === "All Projects") {
+        return await this.database.listDocuments(
+          config.appwriteDatabaseId,
+          config.appwriteCollectionId
+        );
+      }
       return await this.database.listDocuments(
         config.appwriteDatabaseId,
-        config.appwriteCollectionId
-      );
-    } catch (error) {
-      console.log("Error :: getProject() failed :: ", error);
-    }
-  }
-
-  //get frontend projects
-  async getFrontendProjectDetails(
-    slug: string,
-    queries = [Query.equal("slug", "Frontend")]
-  ) {
-    try {
-      return await this.database.getDocument(
-        config.appwriteDatabaseId,
         config.appwriteCollectionId,
-        slug,
-        queries
+        [Query.equal("type", type)]
       );
     } catch (error) {
-      console.log("Error :: getFrontendProjectDetails() failed :: ", error);
-    }
-  }
-
-  //get backend projects
-  async getBackendProjectDetails(
-    slug: string,
-    queries = [Query.equal("slug", "Backend")]
-  ) {
-    try {
-      return await this.database.getDocument(
-        config.appwriteDatabaseId,
-        config.appwriteCollectionId,
-        slug,
-        queries
+      throw new Error(
+        `Appwrite Error :: getProjectDetails() failed :: ${error}`
       );
-    } catch (error) {
-      console.log("Error :: getBackendProjectDetails() failed :: ", error);
     }
-  }
-
-  //get other projects
-  async getOtherProjectDetails(
-    slug: string,
-    queries = [Query.equal("slug", "Other")]
-  ) {
-    try {
-      return await this.database.getDocument(
-        config.appwriteDatabaseId,
-        config.appwriteCollectionId,
-        slug,
-        queries
-      );
-    } catch (error) {
-      console.log("Error :: getOtherProjectDetails() failed :: ", error);
-    }
-  }
+  };
 }
 
 const project = new Projects();
-
 export default project;

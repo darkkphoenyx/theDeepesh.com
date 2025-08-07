@@ -6,7 +6,7 @@ import { Badge } from "../../components/ui/badge";
 const AboutSection = () => {
   return (
     <div className=" bg-gray-800">
-      <section className="overflow-x-hidden z-10 w-full h-auto max-w-7xl md:py-4 py-20 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
+      <section className="overflow-x-hidden z-10 w-full h-auto max-w-7xl lg:py-0  py-20 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
         {/* Image Section */}
 
         {/* Text Section */}

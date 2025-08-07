@@ -64,11 +64,13 @@ const Homepage = () => {
   };
 
   return (
-    <div className="bg-background min-h-screen text-primary">
+    <div className=" bg-background min-h-screen text-primary">
       {/* NAVBAR */}
       <nav
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrolled ? "backdrop-blur-xl shadow-sm bg-background/50" : "bg-background"
+        className={`sticky top-0 z-20 transition-all duration-300 ${
+          scrolled
+            ? "backdrop-blur-xl shadow-sm bg-background/50"
+            : "bg-background"
         }`}
       >
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
@@ -163,9 +165,9 @@ const Homepage = () => {
         )}
       </nav>
       {/* PARTICLES BACKGROUND + SECTIONS */}
-      <div className="relative z-20 bg-background">
+      <div className="relative z-10 bg-background">
         <Particles
-          className="absolute inset-0 z-0"
+          className="absolute inset-0"
           particleCount={5000}
           particleColors={["#FFA500", "#FFFF00"]}
           particleSpread={12}
@@ -175,7 +177,7 @@ const Homepage = () => {
         />
 
         {/* Content sits on top of Particles */}
-        <div className="relative z-10">
+        <div className="relative">
           <section id="knowMe">
             <HeroSection />
             <AboutSection />
@@ -188,8 +190,6 @@ const Homepage = () => {
           <section id="skills">
             <Skills />
           </section>
-
-          {/* <div className="h-20 bg-background"></div> */}
         </div>
       </div>
     </div>

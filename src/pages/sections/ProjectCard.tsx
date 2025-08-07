@@ -1,83 +1,132 @@
-<div className="max-w-7xl mx-auto px-4 pt-24 h-auto overflow-x-hidden">
-  <div className="md:mb-16">
-    <h1
-      data-aos="fade-up"
-      className="text-4xl text-secondary font-extrabold text-center mb-4"
-      style={{ fontFamily: "Priestacy" }}
-    >
-      Project Section
-    </h1>
-    <h1
-      data-aos="fade-up"
-      data-aos-delay="50"
-      className="text-secondary md:my-8 my-12 text-center"
-    >
-      Each project is a unique piece of development
-    </h1>
-  </div>
-  {projectData.map((project) => (
-    <div
-      className="grid md:grid-cols-2 md:gap-8 md:space-y-20 space-y-8 border-b-2 md:border-none h-auto md:mb-0 mb-12 md:p-0 pb-4"
-      dir={`${projectData.indexOf(project) % 2 === 0 ? "ltr" : "rtl"}`}
-      key={project.$id}
-    >
-      <Card
-        data-aos="fade-right"
-        data-aos-delay="30"
-        className="w-full md:h-[400px] h-[300px] p-0 rounded-4xl border-none shadow-none"
-      >
-        <img
-          className="w-full h-full rounded-3xl object-center object-cover"
-          src={project.image}
-          alt={`${project.name} image`}
-        />
-      </Card>
+import { CpuIcon, Eye, GithubIcon, Info, Link } from "lucide-react";
+import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import { useSelector } from "react-redux";
 
-      <Card
-        data-aos="fade-left"
-        className="bg-transparent md:h-[400px] h-[330px] border-none shadow-none text-primary flex justify-center items-center md:p-4 md:gap-8"
-      >
-        <CardTitle dir="ltr" className="text-3xl font-semibold p-0 text-center">
-          {project.name}
-        </CardTitle>
-        <CardDescription dir="ltr" className="text-primary p-0 text-center">
-          {project.details}
-        </CardDescription>
-        <ul
-          dir="ltr"
-          className="flex gap-4 items-center justify-center flex-wrap"
+const ProjectCard = () => {
+  const cardDetails = useSelector((state: any) => state.project);
+  return (
+    <>
+      <div key={cardDetails.$id}>
+        <span
+          className={`uppercase font-medium md:text-sm text-xs px-3 py-1 rounded-full ${
+            cardDetails.type === "Frontend" &&
+            "text-purple-600  bg-purple-700/20"
+          } ${
+            cardDetails.type === "FullStack" &&
+            "text-green-600  bg-green-700/20"
+          } ${
+            cardDetails.type === "Others" && "text-yellow-600  bg-yellow-700/20"
+          }`}
         >
-          {project.techStack.map((stack) => (
-            <li
-              className="font-medium text-xl text-secondary hover:-translate-y-1 transition-all hover:text-accent"
-              key={stack}
-            >
-              {stack}
-            </li>
-          ))}
-        </ul>
-        <div
-          dir="ltr"
-          className="flex justify-center md:gap-12 gap-8 w-full items-center"
-        >
-          <a href={project.github} target="_blank" rel="noopener noreferrer">
-            <button className="flex gap-2 text-xl md:text-3xl items-center cursor-none hover:scale-105 hover:text-secondary w-full">
-              GitHub <GithubIcon size={30} />
-            </button>
-          </a>
-          {project.deployLink && (
-            <a
-              href={project.deployLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="flex gap-2 text-xl md:text-3xl items-center cursor-none hover:scale-105 hover:text-secondary w-full">
-                Live Demo <Eye size={30} />
-              </button>
-            </a>
-          )}
-        </div>
-      </Card>
-    </div>
-  ))}
-</div>;
+          {cardDetails.type}
+        </span>
+
+        <Card className="bg-transparent border-none shadow-none text-primary md:gap-4 gap-3 mt-1 m-0">
+          <CardTitle
+            dir="ltr"
+            className="lg:text-5xl md:text-4xl text-2xl md:text-start text-center font-medium p-0"
+          >
+            {cardDetails.name}
+          </CardTitle>
+          <CardDescription
+            dir="ltr"
+            className="text-white p-0 md:text-start text-center"
+          >
+            {cardDetails.details}
+          </CardDescription>
+          <div className="grid lg:grid-cols-2 mt-4 gap-6 w-full">
+            <Card className=" w-full p-0 rounded-3xl border-none shadow-none m-0">
+              <img
+                className="w-full h-full rounded-2xl object-center object-cover"
+                src={cardDetails.image}
+                alt={`${cardDetails.name} image`}
+              />
+            </Card>
+            <div className="w-full flex flex-col gap-4">
+              <Card className="hidden md:block space-y-4 rounded-2xl p-4 bg-gray-800 gap-0 w-full">
+                <span className="flex gap-2 items-center md:text-xl font-medium text-primary">
+                  <CpuIcon
+                    className="block md:hidden p-1.5 bg-primary/20 rounded-lg"
+                    size={16}
+                  />
+                  <CpuIcon
+                    className="hidden md:block p-1.5 bg-primary/20 rounded-lg"
+                    size={32}
+                  />
+                  Technologies Used
+                </span>
+                <ul
+                  dir="ltr"
+                  className="flex md:items-start items-center gap-2 flex-wrap"
+                >
+                  {cardDetails.techStack.map((stack: string) => (
+                    <li
+                      className="bg-gray-700 px-3 py-1 rounded-full text-secondary hover:scale-105 transition-all hover:text-white md:text-sm text-xs"
+                      key={stack}
+                    >
+                      {stack}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+              <Card className="hidden lg:block bg-gray-800 text-white border-none p-4 gap-3">
+                <CardTitle className="flex gap-2 items-center md:text-xl font-medium text-primary mb-2">
+                  <Info className="p-1.5 bg-primary/20 rounded-lg" size={30} />
+                  Project Details
+                </CardTitle>
+                <div className="flex justify-between md:text-sm text-xs border-b border-gray-500 pb-1 text-gray-200">
+                  <p>Category</p>
+                  <p>{cardDetails.type}</p>
+                </div>
+                <div className="flex justify-between text-sm border-b border-gray-500 pb-1 text-gray-200">
+                  <p>Technologies</p>
+                  <p>{cardDetails.techStack.length}</p>
+                </div>
+              </Card>
+              <div
+                dir="ltr"
+                className="rounded-2xl p-4 bg-gray-800 md:gap-12 gap-8 w-full"
+              >
+                <CardTitle className="flex gap-2 items-center md:justify-start justify-center md:text-xl font-medium text-primary">
+                  <Link className="p-1.5 bg-primary/20 rounded-lg" size={30} />
+                  Project Links
+                </CardTitle>
+                <div
+                  className={`grid ${
+                    cardDetails.deployLink ? "grid-cols-2" : "grid-cols-1"
+                  } justify-between mt-4 w-full gap-2`}
+                >
+                  <a
+                    href={cardDetails.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className=" py-1 bg-gray-700 rounded-full flex gap-2 md:text-lg text-sm items-center justify-center cursor-none hover:scale-105 hover:text-secondary w-full h-full">
+                      GitHub{" "}
+                      <GithubIcon size={20} className="hidden md:block" />
+                      <GithubIcon size={16} className="block md:hidden" />
+                    </button>
+                  </a>
+                  {cardDetails.deployLink && (
+                    <a
+                      href={cardDetails.deployLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="py-1 bg-gray-700 rounded-full flex gap-2 md:text-lg text-sm items-center justify-center cursor-none hover:scale-105 hover:text-secondary w-full">
+                        Live Demo <Eye size={20} className="hidden md:block" />
+                        <Eye size={16} className="block md:hidden" />
+                      </button>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </>
+  );
+};
+
+export default ProjectCard;
