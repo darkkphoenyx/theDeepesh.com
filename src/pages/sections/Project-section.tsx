@@ -1,6 +1,6 @@
 import { GithubIcon } from "lucide-react";
 import { Card, CardDescription, CardTitle } from "../../components/ui/card";
-import project from "../../appwrite/projectAPI";
+import project from "../../appwrite/APIs";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useDispatch } from "react-redux";
@@ -64,6 +64,13 @@ const ProjectSection = () => {
   return (
     <section className="bg-background relative">
       <div className="max-w-7xl mx-auto px-4 py-24 h-auto overflow-hidden">
+        <h2
+          data-aos="fade-up"
+          className="md:text-5xl text-4xl text-center font-bold mb-12 text-secondary"
+          style={{ fontFamily: "Priestacy" }}
+        >
+          Project Section
+        </h2>
         {/* Project Buttons */}
         <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center mb-10">
           {ProjectButtons.map((btn) => (
@@ -131,11 +138,11 @@ const ProjectSection = () => {
               onClick={closeProjectCard}
               className="absolute inset-0 bg-black/80 backdrop-blur-xs"
             />
-            <div className="relative bg-background border border-gray-700 rounded-3xl w-full md:w-1/2 md:px-12 px-4 z-50 pt-6 md:pt-12 md:pb-6">
+            <div className="relative bg-background border border-gray-700 rounded-3xl w-full md:w-1/2 md:px-12 px-4 z-50 md:mt-0 mt-12 pt-6 md:pt-12 md:pb-6">
               <ProjectCard />
               <button
                 onClick={closeProjectCard}
-                className="absolute top-4 right-4 text-5xl hover:text-secondary h-auto"
+                className="absolute top-4 right-4 text-5xl hover:text-secondary h-auto hover:scale-110 transition-all"
               >
                 &times;
               </button>

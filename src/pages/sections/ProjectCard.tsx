@@ -37,7 +37,7 @@ const ProjectCard = () => {
           <div className="grid lg:grid-cols-2 mt-4 gap-6 w-full">
             <Card className=" w-full p-0 rounded-3xl border-none shadow-none m-0">
               <img
-                className="w-full h-full rounded-2xl object-center object-cover"
+                className="w-full md:h-full h-[200px] rounded-2xl object-center object-fill"
                 src={cardDetails.image}
                 alt={`${cardDetails.name} image`}
               />
@@ -69,7 +69,7 @@ const ProjectCard = () => {
                   ))}
                 </ul>
               </Card>
-              <Card className="hidden lg:block bg-gray-800 text-white border-none p-4 gap-3">
+              <Card className="hidden lg:block bg-gray-800 text-white border-none p-4 space-y-2">
                 <CardTitle className="flex gap-2 items-center md:text-xl font-medium text-primary mb-2">
                   <Info className="p-1.5 bg-primary/20 rounded-lg" size={30} />
                   Project Details

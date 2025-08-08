@@ -5,6 +5,7 @@ import Particles from "../animations/Backgrounds/Particles/Particles";
 import AboutSection from "./sections/About-section";
 import Skills from "./sections/Skills";
 import ProjectSection from "./sections/Project-section";
+import ResumeSection from "./sections/Resume-section";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "#knowMe" },
@@ -189,6 +190,10 @@ const Homepage = () => {
 
           <section id="skills">
             <Skills />
+          </section>
+
+          <section id="resume">
+            <ResumeSection />
           </section>
         </div>
       </div>

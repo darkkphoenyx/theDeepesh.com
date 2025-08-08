@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
 import { CardCarousel } from "../../components/ui/card-carousel";
 const images = [
@@ -156,11 +157,7 @@ const Skills = () => {
           >
             My Skills
           </h1>
-          <div
-            data-aos="fade-up"
-            data-aos-delay="30"
-            className="max-w-7xl mx-auto w-full mt-20"
-          >
+          <div className="max-w-7xl mx-auto w-full mt-20">
             <CardCarousel
               images={images}
               autoplayDelay={2000}
@@ -168,22 +165,9 @@ const Skills = () => {
               showNavigation={true}
             />
           </div>
-          {/*card carousel */}
-          {/* <div className="w-full">
-          <CardSwipe
-          images={images}
-          autoplayDelay={2000}
-          slideShadows={false}
-          />
-          </div> */}
           <div className="w-full md:h-[600px] h-[500px]">
             <FlowingMenu items={demoItems} />
           </div>
-
-          {/* <div className="p-4 text-center text-primary flex justify-center items-center">
-          <Facebook size={80} className="" />
-          <FlipLink href="https://x.com/guri_who"> Behance</FlipLink>
-          </div> */}
         </section>
       </div>
     </>

@@ -34,6 +34,18 @@ export class Projects {
       );
     }
   };
+
+  // need to have an api to fetch the file_id for the pdf... since the resume pdf is upadate.. so make it automatick.. 😂
+  getFileDownload = async () => {
+    try {
+      return this.storage.getFileDownload(
+        config.appwriteBucketId,
+        "6895e1d3000af086be94"
+      );
+    } catch (error) {
+      throw new Error("Error getting PDF download.");
+    }
+  };
 }
 
 const project = new Projects();
