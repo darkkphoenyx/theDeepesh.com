@@ -198,7 +198,7 @@ const Homepage = () => {
               <ResumeSection />
             </section>
 
-            <div className="bg-gray-800 md:py-32 py-20 md:rounded-t-[50px] rounded-t-[30px]">
+            <div className="bg-gray-800 md:py-32 py-20 md:rounded-t-[50px] rounded-t-[30px] overflow-x-hidden">
               <TextScroll
                 className=" font-display text-center font-semibold tracking-tighter text-white dark:text-white text-[4rem] md:text-[126px] leading-[5rem]"
                 text1="Vortex of Code"

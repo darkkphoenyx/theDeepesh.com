@@ -103,7 +103,7 @@ const ResumeSection = () => {
           </Card>
         </div>
       </section>
-      <Marquee direction="left" className="md:py-6">
+      <Marquee direction="left" className="md:py-6 overflow-x-hidden">
         {images.map((image) => (
           <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
             <img
