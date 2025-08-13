@@ -5,10 +5,8 @@ import { Badge } from "../../components/ui/badge";
 
 const AboutSection = () => {
   return (
-    <div className=" bg-gray-800">
-      <section className="overflow-x-hidden z-10 w-full h-auto max-w-7xl lg:py-0  py-20 mx-auto text-primary flex flex-col md:flex-row items-center gap-0 md:gap-8 px-4">
-        {/* Image Section */}
-
+    <div className=" bg-gray-800 md:rounded-t-[50px] rounded-t-[30px]">
+      <section className="overflow-x-hidden z-10 w-full h-auto max-w-7xl mx-auto lg:py-20 md:py-8 py-20 text-primary flex flex-col md:flex-row items-center gap-12 md:gap-8 md:pl-4 md:p-0 px-4">
         {/* Text Section */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2
@@ -68,7 +66,7 @@ const AboutSection = () => {
                   <BookOpen size={20} />
                   Tribhuvan University, Kathmandu - Nepal
                 </CardDescription>
-                <Badge className="rounded-4xl text-secondary border border-secondary/50 bg-secondary/10 p-2">
+                <Badge className="rounded-4xl text-secondary border border-secondary/50 bg-secondary/10 px-3 py-2">
                   2022 - Present
                 </Badge>
               </div>
@@ -80,9 +78,9 @@ const AboutSection = () => {
           className="w-full md:w-1/2 flex justify-center h-max"
         >
           <img
-            src="./theDeepesh.png"
+            src="./theDeepesh.jpg"
             alt="owner profile"
-            className="w-full max-w-md h-auto object-contain"
+            className="w-full max-w-md h-auto object-contain scale-92 rounded-3xl shadow-[0px_0px_100px_10px_rgba(255,223,176,0.2)]"
           />
         </div>
       </section>

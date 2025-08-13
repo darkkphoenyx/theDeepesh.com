@@ -1,6 +1,7 @@
 import { CpuIcon, Eye, GithubIcon, Info, Link } from "lucide-react";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+
 import { useSelector } from "react-redux";
+import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 
 const ProjectCard = () => {
   const cardDetails = useSelector((state: any) => state.project);

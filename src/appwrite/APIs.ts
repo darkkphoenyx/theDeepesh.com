@@ -20,12 +20,12 @@ export class Projects {
       if (type === "All Projects") {
         return await this.database.listDocuments(
           config.appwriteDatabaseId,
-          config.appwriteCollectionId
+          config.appwriteCollectionId1
         );
       }
       return await this.database.listDocuments(
         config.appwriteDatabaseId,
-        config.appwriteCollectionId,
+        config.appwriteCollectionId1,
         [Query.equal("type", type)]
       );
     } catch (error) {
@@ -35,12 +35,12 @@ export class Projects {
     }
   };
 
-  // need to have an api to fetch the file_id for the pdf... since the resume pdf is upadate.. so make it automatick.. 😂
+  //to get the pdf download link
   getFileDownload = async () => {
     try {
       return this.storage.getFileDownload(
         config.appwriteBucketId,
-        "6895e1d3000af086be94"
+        "689794480032fa61a2ea"
       );
     } catch (error) {
       throw new Error("Error getting PDF download.");

@@ -19,7 +19,6 @@ function App() {
       <Provider store={store}>
         <Homepage />
       </Provider>
-      {/* <div className="h-20 bg-background"></div> */}
     </>
   );
 }

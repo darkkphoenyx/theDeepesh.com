@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
-import { CardCarousel } from "../../components/ui/card-carousel";
-const images = [
+import Marquee from "react-fast-marquee";
+
+export const images = [
   {
     logo: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
     background: "bg-gradient-to-tl from-primary to-secondary",
@@ -148,24 +148,28 @@ const demoItems = [
 const Skills = () => {
   return (
     <>
-      <div className="bg-gray-800 md:pt-30 pt-16">
-        <section className="h-auto mx-auto max-w-7xl flex flex-col  w-full">
-          <h1
+      <div className="bg-gray-800 md:py-10 py-4 md:rounded-t-[50px] rounded-t-[30px]">
+        <section className="h-auto flex flex-col w-full">
+          {/* <h1
             data-aos="fade-up"
             className="text-5xl font-semibold text-center text-secondary"
             style={{ fontFamily: "Priestacy" }}
           >
             My Skills
-          </h1>
-          <div className="max-w-7xl mx-auto w-full mt-20">
-            <CardCarousel
-              images={images}
-              autoplayDelay={2000}
-              showPagination={true}
-              showNavigation={true}
-            />
-          </div>
-          <div className="w-full md:h-[600px] h-[500px]">
+          </h1> */}
+          <Marquee direction="right" className="md:py-6">
+            {images.map((image) => (
+              <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
+                <img
+                  className="md:h-10 md:w-10 w-8 h-8 rounded-xl"
+                  src={image.logo}
+                  alt={image.alt}
+                />
+                <p>{image.text}</p>
+              </div>
+            ))}
+          </Marquee>
+          <div className="w-full md:h-[600px] h-[400px]">
             <FlowingMenu items={demoItems} />
           </div>
         </section>

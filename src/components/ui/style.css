@@ -1,0 +1,15 @@
+.strokeText {
+  background-image: linear-gradient(90deg, #ffffff);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #1e2938;
+  padding: calc(calc(1em / 2.5) / 2);
+  letter-spacing: calc(1em / 8);
+}
+
+.noStrokeText {
+  padding: calc(calc(1em / 2.5) / 2);
+  letter-spacing: calc(1em / 8);
+}

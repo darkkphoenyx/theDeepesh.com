@@ -4,8 +4,9 @@ import HeroSection from "../pages/sections/Hero-section";
 import Particles from "../animations/Backgrounds/Particles/Particles";
 import AboutSection from "./sections/About-section";
 import Skills from "./sections/Skills";
-import ProjectSection from "./sections/Project-section";
+import ProjectSection from "./sections/Projects/Project-section";
 import ResumeSection from "./sections/Resume-section";
+import { TextScroll } from "../components/ui/text-scroll";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "#knowMe" },
@@ -65,139 +66,156 @@ const Homepage = () => {
   };
 
   return (
-    <div className=" bg-background min-h-screen text-primary">
-      {/* NAVBAR */}
-      <nav
-        className={`sticky top-0 z-20 transition-all duration-300 ${
-          scrolled
-            ? "backdrop-blur-xl shadow-sm bg-background/50"
-            : "bg-background"
-        }`}
-      >
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
-          {/* Logo */}
-          <div>
-            <a
-              href="#knowMe"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigation("#knowMe");
-              }}
-            >
-              <h1
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-once="true"
-                className="text-2xl md:text-3xl font-bold cursor-none"
-                style={{ fontFamily: "Priestacy" }}
+    <>
+      <div className=" bg-background min-h-screen text-primary">
+        {/* NAVBAR */}
+        <nav
+          className={`sticky top-0 z-20 transition-all duration-300 ${
+            scrolled
+              ? "backdrop-blur-xl shadow-sm bg-background/50"
+              : "bg-background"
+          }`}
+        >
+          <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
+            {/* Logo */}
+            <div>
+              <a
+                href="#knowMe"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation("#knowMe");
+                }}
               >
-                theDeepesh
-              </h1>
-            </a>
-          </div>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden md:block">
-            <ul className="flex gap-10 text-lg">
-              {NavRoutes.map((link, index) => (
-                <li
-                  data-aos="fade-down"
-                  data-aos-delay={`${index * 50}`}
+                <h1
+                  data-aos="fade-right"
+                  data-aos-duration="800"
                   data-aos-once="true"
-                  key={link.id}
+                  className="text-2xl md:text-3xl font-bold cursor-none"
+                  style={{ fontFamily: "Priestacy" }}
                 >
-                  <a
-                    href={link.link}
-                    className={`transition hover:text-secondary cursor-none ${
-                      activeSection === link.link.slice(1)
-                        ? "font-medium text-secondary"
-                        : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigation(link.link);
-                    }}
+                  theDeepesh
+                </h1>
+              </a>
+            </div>
+
+            {/* Desktop Nav Links */}
+            <div className="hidden md:block">
+              <ul className="flex gap-10 text-lg">
+                {NavRoutes.map((link, index) => (
+                  <li
+                    data-aos="fade-down"
+                    data-aos-delay={`${index * 50}`}
+                    data-aos-once="true"
+                    key={link.id}
                   >
-                    {link.nav}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <a
+                      href={link.link}
+                      className={`transition hover:text-secondary cursor-none ${
+                        activeSection === link.link.slice(1)
+                          ? "font-medium text-secondary"
+                          : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(link.link);
+                      }}
+                    >
+                      {link.nav}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <div className="md:hidden">
+              <button onClick={toggleMobileMenu}>
+                {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden px-4 pb-4 w-full">
-            <ul className="flex flex-col gap-4">
-              {NavRoutes.map((link, index) => (
-                <li
-                  data-aos="fade-left"
-                  data-aos-delay={`${index * 50}`}
-                  data-aos-duration="400"
-                  key={link.id}
-                >
-                  <a
-                    href={link.link}
-                    className={`block w-full py-2 ${
-                      activeSection === link.link.slice(1)
-                        ? "font-medium text-secondary"
-                        : ""
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsMobileMenuOpen(false);
-                      handleNavigation(link.link);
-                    }}
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden px-4 pb-4 w-full">
+              <ul className="flex flex-col gap-4">
+                {NavRoutes.map((link, index) => (
+                  <li
+                    data-aos="fade-left"
+                    data-aos-delay={`${index * 50}`}
+                    data-aos-duration="400"
+                    key={link.id}
                   >
-                    {link.nav}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                    <a
+                      href={link.link}
+                      className={`block w-full py-2 ${
+                        activeSection === link.link.slice(1)
+                          ? "font-medium text-secondary"
+                          : ""
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMobileMenuOpen(false);
+                        handleNavigation(link.link);
+                      }}
+                    >
+                      {link.nav}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </nav>
+        {/* PARTICLES BACKGROUND + SECTIONS */}
+        <div className="relative z-10 bg-background">
+          <Particles
+            className="absolute inset-0"
+            particleCount={5000}
+            particleColors={["#FFA500", "#FFFF00"]}
+            particleSpread={12}
+            particleBaseSize={80}
+            speed={0.2}
+            alphaParticles
+          />
+
+          {/* Content sits on top of Particles */}
+          <div className="relative">
+            <section id="knowMe">
+              <HeroSection />
+              <AboutSection />
+            </section>
+
+            <section id="projects">
+              <ProjectSection />
+            </section>
+
+            <section id="skills">
+              <Skills />
+            </section>
+
+            <section id="resume">
+              <ResumeSection />
+            </section>
+
+            <div className="bg-gray-800 md:py-32 py-20 md:rounded-t-[50px] rounded-t-[30px]">
+              <TextScroll
+                className=" font-display text-center font-semibold tracking-tighter text-white dark:text-white text-[4rem] md:text-[126px] leading-[5rem]"
+                text1="Vortex of Code"
+                text2="Aetherial User Interfaces"
+                default_velocity={5}
+              />
+              <TextScroll
+                className=" font-display text-center font-semibold tracking-tighter text-white dark:text-white text-[4rem] md:text-[126px] leading-[5rem]"
+                text1="Lucidum Frameworks"
+                text2="Kinetic Development"
+                default_velocity={5}
+              />
+            </div>
           </div>
-        )}
-      </nav>
-      {/* PARTICLES BACKGROUND + SECTIONS */}
-      <div className="relative z-10 bg-background">
-        <Particles
-          className="absolute inset-0"
-          particleCount={5000}
-          particleColors={["#FFA500", "#FFFF00"]}
-          particleSpread={12}
-          particleBaseSize={80}
-          speed={0.2}
-          alphaParticles
-        />
-
-        {/* Content sits on top of Particles */}
-        <div className="relative">
-          <section id="knowMe">
-            <HeroSection />
-            <AboutSection />
-          </section>
-
-          <section id="projects">
-            <ProjectSection />
-          </section>
-
-          <section id="skills">
-            <Skills />
-          </section>
-
-          <section id="resume">
-            <ResumeSection />
-          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

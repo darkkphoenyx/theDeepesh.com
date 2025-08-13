@@ -1,11 +1,11 @@
-import { GithubIcon } from "lucide-react";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
-import project from "../../appwrite/APIs";
 import { useEffect, useState } from "react";
-import ProjectCard from "./ProjectCard";
+import type { Project } from "../../../interfaces/projectCrad.interface";
 import { useDispatch } from "react-redux";
-import { updateIsOpen } from "../../redux/projectSlice";
-import type { Project } from "../../interfaces/projectCrad.interface";
+import project from "../../../appwrite/APIs";
+import { updateIsOpen } from "../../../redux/projectSlice";
+import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
+import { GithubIcon } from "lucide-react";
+import ProjectCard from "./ExtendedProjectCard";
 
 const ProjectButtons = [
   {
@@ -36,7 +36,7 @@ const ProjectSection = () => {
     const fetceProjects = async () => {
       try {
         const response = await project.getProjectDetails(cardType);
-        const data = response?.documents || [];
+        const data: any = response?.documents || [];
         setProjectData(data);
       } catch (error) {
         if (error) console.log(error);

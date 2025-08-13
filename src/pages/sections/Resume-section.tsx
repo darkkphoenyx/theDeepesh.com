@@ -4,14 +4,17 @@ import "aos/dist/aos.css";
 import project from "../../appwrite/APIs";
 import { useEffect, useState } from "react";
 import PixelTransition from "../../animations/Animations/PixelTransition/PixelTransition";
+import Marquee from "react-fast-marquee";
+import { images } from "./Skills";
+
 const ResumeSection = () => {
-  const [pdfLink, setPdfLink] = useState<string | undefined>();
+  const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();
 
   useEffect(() => {
     const getPdfLink = async () => {
       try {
         const response = await project.getFileDownload();
-        setPdfLink(response);
+        setPdfDownloadLink(response);
       } catch (error) {
         console.log(error);
       }
@@ -72,7 +75,7 @@ const ResumeSection = () => {
               }
               gridSize={12}
               pixelColor="#101E2A"
-              animationStepDuration={0.35}
+              animationStepDuration={0.3}
               className="custom-pixel-card bg-secondary"
             />
           </div>
@@ -85,12 +88,12 @@ const ResumeSection = () => {
               Download Resume
             </CardTitle>
             <CardDescription className="text-white md:text-base text-center md:text-left">
-              Explore my qualifications, skills, and professional background.
-              You can view the interactive preview below or download the PDF for
-              a complete record.
+              Curious about what I bring to the table? Dive into the interactive
+              preview below or grab the full PDF for the whole story, skills,
+              experience, and a dash of personality included!
             </CardDescription>
             <div className="flex justify-center md:justify-start mt-4">
-              <a href={pdfLink} className="w-full">
+              <a href={pdfDownloadLink} className="w-full">
                 <button className="flex items-center justify-center gap-2 lg:w-1/2 w-full text-background cursor-pointer bg-secondary py-4 rounded-full md:text-2xl text-xl font-medium hover:scale-105 transition-all shadow-[0px_0px_20px_10px_rgba(255,223,176,0.2)]">
                   <Download />
                   Download Now
@@ -100,6 +103,18 @@ const ResumeSection = () => {
           </Card>
         </div>
       </section>
+      <Marquee direction="left" className="md:py-6">
+        {images.map((image) => (
+          <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
+            <img
+              className="md:h-10 md:w-10 w-8 h-8 rounded-xl"
+              src={image.logo}
+              alt={image.alt}
+            />
+            <p>{image.text}</p>
+          </div>
+        ))}
+      </Marquee>
     </div>
   );
 };
