@@ -5,7 +5,7 @@ import project from "../../appwrite/APIs";
 import { useEffect, useState } from "react";
 import PixelTransition from "../../animations/Animations/PixelTransition/PixelTransition";
 import Marquee from "react-fast-marquee";
-import { images } from "./Skills";
+import { SkillsImages } from "./Projects/SkillsImagesExport";
 
 const ResumeSection = () => {
   const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();
@@ -104,7 +104,7 @@ const ResumeSection = () => {
         </div>
       </section>
       <Marquee direction="left" className="md:py-6 overflow-x-hidden">
-        {images.map((image) => (
+        {SkillsImages.map((image) => (
           <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
             <img
               className="md:h-10 md:w-10 w-8 h-8 rounded-xl"
