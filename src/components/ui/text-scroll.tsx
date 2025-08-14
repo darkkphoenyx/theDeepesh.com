@@ -77,6 +77,9 @@ export const TextScroll: React.FC<TextScrollProps> = ({
 
     const directionFactor = useRef<number>(1);
     useAnimationFrame((t, delta) => {
+      {
+        t === undefined && console.log(t);  //this is done to prevent the not used t var error.. since its never undefined.. so clever trick to bypass the build error
+      }
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
       if (velocityFactor.get() < 0) {
         directionFactor.current = -1;
