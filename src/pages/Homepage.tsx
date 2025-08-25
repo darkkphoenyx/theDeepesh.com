@@ -7,6 +7,8 @@ import Skills from "./sections/Skills";
 import ProjectSection from "./sections/Projects/Project-section";
 import ResumeSection from "./sections/Resume-section";
 import { TextScroll } from "../components/ui/text-scroll";
+import ContactSection from "./sections/Contact-section";
+import { Toaster } from "../components/ui/sonner";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "#knowMe" },
@@ -64,7 +66,8 @@ const Homepage = () => {
       console.error(`Element with selector ${link} not found!`);
     }
   };
-
+  const isMd = window.innerWidth >= 1080;
+  const width = scrolled ? (isMd ? "80rem" : "100%") : isMd ? "90%" : "100%";
   return (
     <>
       <div className=" bg-background min-h-screen text-primary">
@@ -76,62 +79,72 @@ const Homepage = () => {
               : "bg-background"
           }`}
         >
-          <div className="flex items-center justify-between w-full max-w-7xl mx-auto py-4 px-4">
-            {/* Logo */}
-            <div>
-              <a
-                href="#knowMe"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation("#knowMe");
-                }}
-              >
-                <h1
-                  data-aos="fade-right"
-                  data-aos-duration="800"
-                  data-aos-once="true"
-                  className="text-2xl md:text-3xl font-bold cursor-none"
-                  style={{ fontFamily: "Priestacy" }}
+          <div className="mx-[10px]">
+            <div
+              className={`flex items-center justify-between w-full mx-auto py-4 px-4 transition-all duration-300 ease-in-out`}
+              style={{
+                maxWidth: width,
+              }}
+            >
+              {/* content */}
+
+              {/* Logo */}
+              <div>
+                <a
+                  href="#knowMe"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("#knowMe");
+                  }}
                 >
-                  theDeepesh
-                </h1>
-              </a>
-            </div>
-
-            {/* Desktop Nav Links */}
-            <div className="hidden md:block">
-              <ul className="flex gap-10 text-lg">
-                {NavRoutes.map((link, index) => (
-                  <li
-                    data-aos="fade-down"
-                    data-aos-delay={`${index * 50}`}
+                  <h1
+                    data-aos="fade-right"
+                    data-aos-duration="800"
                     data-aos-once="true"
-                    key={link.id}
+                    className="text-2xl md:text-3xl font-bold cursor-none"
+                    style={{ fontFamily: "Priestacy" }}
                   >
-                    <a
-                      href={link.link}
-                      className={`transition hover:text-secondary cursor-none ${
-                        activeSection === link.link.slice(1)
-                          ? "font-medium text-secondary"
-                          : ""
-                      }`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation(link.link);
-                      }}
-                    >
-                      {link.nav}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    theDeepesh
+                  </h1>
+                </a>
+              </div>
 
-            {/* Mobile Menu Toggle */}
-            <div className="md:hidden">
-              <button onClick={toggleMobileMenu}>
-                {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
-              </button>
+              {/* Desktop Nav Links */}
+              <div className="hidden md:block">
+                <ul className="flex gap-10 text-lg">
+                  {NavRoutes.map((link, index) => (
+                    <li
+                      data-aos="fade-down"
+                      data-aos-delay={`${index * 50}`}
+                      data-aos-once="true"
+                      key={link.id}
+                    >
+                      <a
+                        href={link.link}
+                        className={`transition hover:text-secondary cursor-none ${
+                          activeSection === link.link.slice(1)
+                            ? "font-medium text-secondary"
+                            : ""
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(link.link);
+                        }}
+                      >
+                        {link.nav}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Mobile Menu Toggle */}
+              <div className="md:hidden">
+                <button onClick={toggleMobileMenu}>
+                  {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
+                </button>
+              </div>
+              {/* </div> */}
             </div>
           </div>
 
@@ -181,7 +194,16 @@ const Homepage = () => {
 
           {/* Content sits on top of Particles */}
           <div className="relative">
-            <section id="knowMe">
+            <section
+              id="knowMe"
+              style={{
+                backgroundImage: `
+          radial-gradient(circle at 50% 100%, rgba(253, 224, 71, 0.4) 0%, transparent 60%),
+          radial-gradient(circle at 50% 100%, rgba(251, 191, 36, 0.4) 0%, transparent 70%),
+          radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.5) 0%, transparent 80%)
+        `,
+              }}
+            >
               <HeroSection />
               <AboutSection />
             </section>
@@ -212,6 +234,12 @@ const Homepage = () => {
                 default_velocity={5}
               />
             </div>
+
+            {/* contact section wrapper */}
+            <Toaster />
+            <section id="contact">
+              <ContactSection />
+            </section>
           </div>
         </div>
       </div>

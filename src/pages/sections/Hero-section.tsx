@@ -82,7 +82,7 @@ const HeroSection = () => {
         </motion.section>
         <CircularText
           className="hidden md:block absolute transform -translate-x-1/2 left-1/2 -bottom-180 z-0"
-          text="SCROLL*DOWN*"
+          text="Just • Keep • Scrolling • "
         />
       </div>
       <p

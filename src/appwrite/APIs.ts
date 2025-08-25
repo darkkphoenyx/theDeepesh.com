@@ -1,5 +1,6 @@
-import { Client, Databases, Query, Storage } from "appwrite";
+import { Client, Databases, ID, Query, Storage } from "appwrite";
 import config from "../config/config";
+// import type { ContactForm } from "../pages/sections/ContactForm";
 
 export class Projects {
   client = new Client();
@@ -44,6 +45,30 @@ export class Projects {
       );
     } catch (error) {
       throw new Error("Error getting PDF download.");
+    }
+  };
+
+  // to upload comments
+  writeComments = async ({
+    name,
+    message,
+    phone,
+    email,
+  }: {
+    name: string;
+    message: string;
+    phone: string;
+    email: string;
+  }) => {
+    try {
+      return this.database.createDocument(
+        config.appwriteDatabaseId,
+        config.appwriteCollectionId3,
+        ID.unique(),
+        { name, message, phone, email }
+      );
+    } catch (error) {
+      throw new Error(`Error commenting:: ${error}`);
     }
   };
 }

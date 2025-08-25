@@ -164,6 +164,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Stretched";
+  src: url("/PinballWhizNF.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   cursor: none;
 }
