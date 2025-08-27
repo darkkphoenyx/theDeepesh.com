@@ -6,7 +6,6 @@ import AboutSection from "./sections/About-section";
 import Skills from "./sections/Skills";
 import ProjectSection from "./sections/Projects/Project-section";
 import ResumeSection from "./sections/Resume-section";
-import { TextScroll } from "../components/ui/text-scroll";
 import ContactSection from "./sections/Contact-section";
 import { Toaster } from "../components/ui/sonner";
 
@@ -73,7 +72,7 @@ const Homepage = () => {
       <div className=" bg-background min-h-screen text-primary">
         {/* NAVBAR */}
         <nav
-          className={`sticky top-0 z-20 transition-all duration-300 ${
+          className={`sticky top-0 z-20 transition-all duration-300 ease-in ${
             scrolled
               ? "backdrop-blur-xl shadow-sm bg-background/50"
               : "bg-background"
@@ -220,26 +219,26 @@ const Homepage = () => {
               <ResumeSection />
             </section>
 
-            <div className="bg-gray-800 md:py-32 py-20 md:rounded-t-[50px] rounded-t-[30px] overflow-x-hidden">
-              <TextScroll
-                className=" font-display text-center font-semibold tracking-tighter text-white dark:text-white text-[4rem] md:text-[126px] leading-[5rem]"
-                text1="Vortex of Code"
-                text2="Aetherial User Interfaces"
-                default_velocity={5}
-              />
-              <TextScroll
-                className=" font-display text-center font-semibold tracking-tighter text-white dark:text-white text-[4rem] md:text-[126px] leading-[5rem]"
-                text1="Lucidum Frameworks"
-                text2="Kinetic Development"
-                default_velocity={5}
-              />
-            </div>
-
             {/* contact section wrapper */}
             <Toaster />
             <section id="contact">
               <ContactSection />
             </section>
+          </div>
+        </div>
+      </div>
+      <div
+        className="relative h-[210px] bg-primary z-40" //remember the h is the total height of the viewport for the actual component to be placed... so play around with the values
+        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }} //here the polygon is a rectangle that is used as clipping mask for the component to be rendered
+      >
+        <div className="relative h-[calc(100vh+210px)] -top-[100vh]">
+          <div className="sticky top-[calc(100vh-210px)] h-[210px]">
+            <div className="flex items-center justify-center bg-primary">
+              <p className="text-[200px] flex items-center -mt-16 font-bold  text-background tracking-widest">
+                revamp
+                {/* <ArrowRight size={200} /> */}
+              </p>
+            </div>
           </div>
         </div>
       </div>

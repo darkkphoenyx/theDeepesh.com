@@ -41,7 +41,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <div className="border md:p-10 p-8 rounded-3xl">
+    <div className="border border-gray-600 bg-gray-800 md:p-10 p-8 rounded-3xl">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(FormSubmit)} className="space-y-8">
           <FormField

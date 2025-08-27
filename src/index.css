@@ -41,6 +41,7 @@
     "Times New Roman", Times, serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular,
     Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-heading: "Viga", sans-serif;
 
   --radius: 0.5rem;
 
