@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+# Welcome to My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi there 👋, I'm Deepesh, a passionate **Web Developer** and **Software Engineer**. Welcome to my GitHub repository, where I showcase my projects and coding journey.
 
-Currently, two official plugins are available:
+Check out my personal portfolio website: **[thedeepesh.vercel.app](https://thedeepesh.vercel.app/)** 🌐
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧑‍💻 About Me
 
-## Expanding the ESLint configuration
+I'm a creative developer with a knack for building clean, scalable, and user-friendly web applications. With a solid foundation in **front-end development** and a growing interest in **back-end technologies**, I aim to bridge the gap between design and functionality.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 💻 **Technologies I work with**:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  - Front-end: React, Next.js, TypeScript and Tailwind CSS
+  - Back-end: Node.js, Express, MongoDB, Firebase
+  - Tools: Git, GitHub, Vercel, Netlify, Docker
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 🔭 Currently working at **[BrahmaByte Lab](https://brahmabytelab.com)**
+- 📫 How to reach me: **[LinkedIn](https://www.linkedin.com/in/deepeshsunuwar/)**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📈 GitHub Stats
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<img img width=390 src="https://github-readme-streak-stats.herokuapp.com/?user=darkkphoenyx&count_private=true&theme=react&border_radius=10" alt="Streak Stats" />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Get In Touch
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+If you're interested in collaborating or have any questions, feel free to reach out!
+
+- 📧 Email: **sun.08deepesh@gmail.com**
+- 🌐 Portfolio: **[thedeepesh.vercel.app](https://thedeepesh.vercel.app/)**
+
+---
+
+Feel free to modify this template to better fit your style and content! You can also add sections like **Contributing**, **License**, or any other information that might be relevant.
