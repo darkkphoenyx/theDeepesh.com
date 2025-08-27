@@ -28,7 +28,7 @@ const ContactForm = () => {
     try {
       await project.writeComments(data);
       console.log("comment added");
-      form.reset();
+      // form.reset();
       toast.success("Message sent!", {
         description:
           "We have received your message and will get back to you soon.",
@@ -55,7 +55,7 @@ const ContactForm = () => {
                 <FormControl>
                   <input
                     type="text"
-                    className="border-b-2 outline-none text-secondary mt-4"
+                    className="border-b-2 outline-none text-secondary"
                     {...field}
                     placeholder="Deepesh Sunuwar"
                   />
@@ -76,7 +76,7 @@ const ContactForm = () => {
                   <FormControl>
                     <input
                       type="text"
-                      className="border-b-2 outline-none text-secondary mt-4"
+                      className="border-b-2 outline-none text-secondary"
                       {...field}
                       placeholder="sun.08deepesh@gmail.com"
                     />
@@ -98,14 +98,14 @@ const ContactForm = () => {
                       type="text"
                       inputMode="numeric"
                       pattern="[0-9]*"
-                      maxLength={10}
-                      className="border-b-2 outline-none text-secondary mt-4"
+                      maxLength={16}
+                      className="border-b-2 outline-none text-secondary"
                       {...field}
                       onChange={(e) => {
                         const value = e.target.value.replace(/\D/g, ""); // Remove non-digits
                         field.onChange(value);
                       }}
-                      placeholder="9810101010"
+                      placeholder="+977-9818414667"
                     />
                   </FormControl>
                   <FormMessage />
@@ -123,7 +123,7 @@ const ContactForm = () => {
                 </FormLabel>
                 <FormControl>
                   <textarea
-                    className="border-b-2 outline-none text-secondary mt-4 resize-none overflow-hidden w-full leading-relaxed"
+                    className="border-b-2 outline-none text-secondary resize-none overflow-hidden w-full leading-relaxed"
                     placeholder="Glad to meet yaa!"
                     {...field}
                   />

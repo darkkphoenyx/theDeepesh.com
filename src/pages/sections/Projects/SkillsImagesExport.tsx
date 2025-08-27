@@ -90,7 +90,7 @@ export const SkillsImages = [
     text: "Postman",
   },
   {
-    logo: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+    logo: "https://www.pngfind.com/pngs/m/136-1363736_express-js-icon-png-transparent-png.png",
     background: "bg-gradient-to-tl from-primary to-secondary",
     alt: "Image 15",
     text: "ExpressJS",

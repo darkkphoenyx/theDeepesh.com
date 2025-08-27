@@ -227,20 +227,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div
-        className="relative h-[210px] bg-primary z-40 lg:block hidden" //remember the h is the total height of the viewport for the actual component to be placed... so play around with the values
-        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }} //here the polygon is a rectangle that is used as clipping mask for the component to be rendered
-      >
-        <div className="relative h-[calc(100vh+210px)] -top-[100vh]">
-          <div className="sticky top-[calc(100vh-210px)] h-[210px]">
-            <div className="flex items-center justify-center bg-primary">
-              <p className="lg:text-[200px] text-[150px] flex items-center lg:-mt-16 -mt-8 font-bold  text-background tracking-widest">
-                revamp
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="h-12 bg-background block md:hidden"></div>
     </>
   );
 };

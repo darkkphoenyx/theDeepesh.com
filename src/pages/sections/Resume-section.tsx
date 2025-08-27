@@ -32,7 +32,7 @@ const ResumeSection = () => {
         >
           My Resume
         </h2>
-        <div className="border-none flex md:flex-nowrap flex-wrap items-center justify-center p-6 md:p-12 rounded-3xl m-0 shadow-none w-full gap-8 bg-gray-800 overflow-x-hidden">
+        <div className="border border-gray-600 flex md:flex-nowrap flex-wrap items-center justify-center p-6 md:p-12 rounded-3xl m-0 shadow-none w-full gap-8 bg-gray-800 overflow-x-hidden">
           <div
             data-aos="fade-right"
             data-aos-delay="30"

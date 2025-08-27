@@ -45,7 +45,7 @@ const Skills = () => {
             {SkillsImages.map((image) => (
               <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
                 <img
-                  className="md:h-10 md:w-10 w-8 h-8 rounded-xl"
+                  className="md:h-10 md:w-10 w-8 h-8 rounded-md"
                   src={image.logo}
                   alt={image.alt}
                 />
