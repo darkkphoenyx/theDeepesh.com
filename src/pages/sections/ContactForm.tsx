@@ -31,7 +31,7 @@ const ContactForm = () => {
       // form.reset();
       toast.success("Message sent!", {
         description:
-          "We have received your message and will get back to you soon.",
+          "I have received your message and shall get back to you soon.",
       });
     } catch (error) {
       console.log("Error", error);
