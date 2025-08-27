@@ -18,7 +18,7 @@ const ContactSection = () => {
         >
           Get in Touch
         </h1>
-        <p className="text-secondary/80">
+        <p className="text-secondary/80 px-4">
           Whether you have a question or just wanna to say "HI", I'll try my
           best to get back to you!
         </p>
