@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 const ContactSection = () => {
   return (
     <div
-      className="bg-background pt-20"
+      className="bg-background pt-20 pb-2"
       style={{
         background:
           "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(30, 41, 56, 0.5), transparent 70%), #101E2A",
