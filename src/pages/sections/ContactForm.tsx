@@ -28,7 +28,7 @@ const ContactForm = () => {
     try {
       await project.writeComments(data);
       console.log("comment added");
-      // form.reset();
+      form.reset();
       toast.success("Message sent!", {
         description:
           "I have received your message and shall get back to you soon.",
