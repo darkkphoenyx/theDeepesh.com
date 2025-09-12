@@ -13,7 +13,7 @@ const ContactSection = () => {
     >
       <div className="max-w-7xl mx-auto text-center">
         <h1
-          className="lg:text-5xl md:text-4xl font-bold text-secondary text-3xl mb-8"
+          className="lg:text-5xl md:text-4xl font-bold text-secondary text-3xl lg:mb-12 mb-8"
           style={{ fontFamily: "Priestacy" }}
         >
           Get in Touch
@@ -23,7 +23,7 @@ const ContactSection = () => {
           best to get back to you!
         </p>
       </div>
-      <div className="grid md:grid-cols-2 mt-8 space-y-8 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 mt-18 mb-8 space-y-8 max-w-7xl mx-auto">
         <div className="px-4">
           <ContactForm />
         </div>
@@ -97,16 +97,14 @@ const ContactSection = () => {
 
       {/* clipping mask */}
       <div
-        className="relative h-[270px] bg-primary z-10 lg:block hidden" //remember the h is the total height of the viewport for the actual component to be placed... so play around with the values
-        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }} //here the polygon is a rectangle that is used as clipping mask for the component to be rendered
+        className="relative lg:h-[170px] md:h-[80px] h-[50px] bg-primary z-10"
+        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
-        <div className="relative bg-primary h-[calc(100vh+270px)] -top-[100vh]">
-          <div className="sticky top-[calc(100vh-270px)] h-[270px]">
-            <div className="flex items-center justify-center">
-              <p className="lg:text-[200px] text-[150px] flex items-center -mt-10 font-bold  text-background tracking-[50px]">
-                gracias!
-              </p>
-            </div>
+        <div className="relative bg-primary lg:h-[calc(100vh+170px)] md:h-[calc(100vh+80px)] h-[calc(100vh+50px)] -top-[100vh]">
+          <div className="sticky lg:top-[calc(100vh-170px)] md:top-[calc(100vh-80px)] top-[calc(100vh-50px)] lg:h-[170px] md:h-[80px] h-[50px]">
+            <p className="lg:text-[120px] md:text-[50px] text-[18px] flex justify-center ml-4 text-center md:pt-0 pt-2 font-bold text-background md:tracking-[50px] tracking-[30px]">
+              gracias!
+            </p>
           </div>
         </div>
       </div>

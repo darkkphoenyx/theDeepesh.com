@@ -27,7 +27,7 @@ const Homepage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+      setScrolled(window.scrollY > 200);
 
       const sections = ["knowMe", "projects", "skills", "contact"];
       for (const section of sections) {
@@ -45,7 +45,7 @@ const Homepage = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -227,7 +227,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="h-12 bg-background block md:hidden"></div>
+      {/* <div className="h-12 bg-background block md:hidden"></div> */}
     </>
   );
 };

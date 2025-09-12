@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   useLayoutEffect(() => {
     const handleScroll = () => {
-      setIsMobileMenuOpen(window.scrollY >= 20);
+      setIsMobileMenuOpen(window.scrollY >= 200);
     };
 
     window.addEventListener("scroll", handleScroll);
