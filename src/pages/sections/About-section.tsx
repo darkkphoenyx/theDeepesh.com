@@ -67,7 +67,7 @@ const AboutSection = () => {
                   Tribhuvan University, Kathmandu - Nepal
                 </CardDescription>
                 <Badge className="rounded-4xl text-secondary border border-secondary/50 bg-secondary/10 px-3 py-2">
-                  2022 - Present
+                  2023 - Present
                 </Badge>
               </div>
             </Card>
