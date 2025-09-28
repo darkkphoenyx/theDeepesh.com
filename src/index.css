@@ -158,11 +158,24 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
+/* priestacy font */
 @font-face {
   font-family: "Priestacy";
-  src: url("/Priestacy.otf") format("truetype");
+  src: url("/fonts/Priestacy.woff2") format("woff2"),
+    url("/fonts/Priestacy.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+/* conpressa VF font */
+@font-face {
+  font-family: "Compressa VF";
+  src: url("https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
