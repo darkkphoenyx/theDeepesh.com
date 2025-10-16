@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import HeroSection from "../pages/sections/Hero-section";
 import Particles from "../animations/Backgrounds/Particles/Particles";
@@ -8,37 +8,64 @@ import ProjectSection from "./sections/Projects/Project-section";
 import ResumeSection from "./sections/Resume-section";
 import ContactSection from "./sections/Contact-section";
 import { Toaster } from "../components/ui/sonner";
+import { useIsMd } from "../utils/useIsMid";
 
 const NavRoutes = [
-  { id: 1, nav: "Know me", link: "#knowMe" },
-  { id: 2, nav: "Projects", link: "#projects" },
-  { id: 3, nav: "Skills", link: "#skills" },
-  { id: 4, nav: "Contact", link: "#contact" },
+  { id: 1, nav: "Know me", link: "knowMe" },
+  { id: 2, nav: "Projects", link: "projects" },
+  { id: 3, nav: "Skills", link: "skills" },
+  { id: 4, nav: "Contact", link: "contact" },
 ];
 
 const Homepage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const navRef = useRef<HTMLElement | null>(null);
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  // this is a helper function for Removing null return issue of Ref. el
+  const registerSection = useCallback(
+    (key: string) => (el: HTMLDivElement | null) => {
+      sectionRefs.current[key] = el;
+    },
+    []
+  );
+
+  const handleRefNavigation = useCallback((section: string) => {
+    const navbarHeight = navRef.current?.clientHeight || 0;
+
+    const element = sectionRefs.current[section];
+
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      window.scrollTo({
+        top: window.pageYOffset + rect.top - navbarHeight,
+        behavior: "smooth",
+      });
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 200);
 
-      const sections = ["knowMe", "projects", "skills", "contact"];
+      const sections = Object.keys(sectionRefs.current);
       for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
+        const el = sectionRefs.current[section];
+        if (el) {
+          const rect = el.getBoundingClientRect();
           if (
             rect.top <= window.innerHeight / 2 &&
             rect.bottom >= window.innerHeight / 4
           ) {
-            setActiveSection(section);
+            if (activeSection !== section) {
+              setActiveSection(section);
+            }
             break;
           }
         }
@@ -47,31 +74,26 @@ const Homepage = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
 
-  const handleNavigation = (link: string) => {
-    const navbarHeight = document.querySelector("nav")?.clientHeight || 0;
+  const isMd = useIsMd();
 
-    window.history.pushState({}, "", link);
-    const targetElement = document.querySelector(link);
+  //remove mobile nav on desktop and tablet
+  useEffect(() => {
+    if (isMd) setIsMobileMenuOpen(false);
+  }, [isMd]);
 
-    if (targetElement) {
-      const rect = targetElement.getBoundingClientRect();
-      window.scrollTo({
-        top: window.pageYOffset + rect.top - navbarHeight,
-        behavior: "smooth",
-      });
-    } else {
-      console.error(`Element with selector ${link} not found!`);
-    }
-  };
-  const isMd = window.innerWidth >= 1080;
-  const width = scrolled ? (isMd ? "80rem" : "100%") : isMd ? "90%" : "100%";
+  const width = isMd ? (scrolled ? "80rem" : "90%") : "100%";
+
   return (
     <>
-      <div className=" bg-background min-h-screen text-primary">
+      <Toaster position="top-right" />
+      <div className="bg-background min-h-screen text-primary">
         {/* NAVBAR */}
         <nav
+          ref={navRef}
+          role="navigation"
+          aria-label="Main Navigation"
           className={`sticky top-0 z-20 transition-all duration-300 ease-in ${
             scrolled
               ? "backdrop-blur-xl shadow-sm bg-background/50"
@@ -85,15 +107,13 @@ const Homepage = () => {
                 maxWidth: width,
               }}
             >
-              {/* content */}
-
               {/* Logo */}
               <div>
                 <a
                   href="#knowMe"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavigation("#knowMe");
+                    handleRefNavigation("knowMe");
                   }}
                 >
                   <h1
@@ -119,15 +139,15 @@ const Homepage = () => {
                       key={link.id}
                     >
                       <a
-                        href={link.link}
+                        href={`#${link.link}`}
                         className={`transition hover:text-secondary cursor-none ${
-                          activeSection === link.link.slice(1)
+                          activeSection === link.link
                             ? "font-medium text-secondary"
                             : ""
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          handleNavigation(link.link);
+                          handleRefNavigation(link.link);
                         }}
                       >
                         {link.nav}
@@ -138,12 +158,16 @@ const Homepage = () => {
               </div>
 
               {/* Mobile Menu Toggle */}
-              <div className="md:hidden">
-                <button onClick={toggleMobileMenu}>
+              <div className="md:hidden" id="mobile-menu">
+                <button
+                  onClick={toggleMobileMenu}
+                  aria-expanded={isMobileMenuOpen}
+                  aria-controls="mobile-menu"
+                  aria-label="Toggle mobile navigation menu"
+                >
                   {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
                 </button>
               </div>
-              {/* </div> */}
             </div>
           </div>
 
@@ -159,16 +183,16 @@ const Homepage = () => {
                     key={link.id}
                   >
                     <a
-                      href={link.link}
+                      href={`#${link.link}`}
                       className={`block w-full py-2 ${
-                        activeSection === link.link.slice(1)
+                        activeSection === link.link
                           ? "font-medium text-secondary"
                           : ""
                       }`}
                       onClick={(e) => {
                         e.preventDefault();
                         setIsMobileMenuOpen(false);
-                        handleNavigation(link.link);
+                        handleRefNavigation(link.link);
                       }}
                     >
                       {link.nav}
@@ -179,6 +203,7 @@ const Homepage = () => {
             </div>
           )}
         </nav>
+
         {/* PARTICLES BACKGROUND + SECTIONS */}
         <div className="relative z-10 bg-background">
           <Particles
@@ -191,43 +216,40 @@ const Homepage = () => {
             alphaParticles
           />
 
-          {/* Content sits on top of Particles */}
           <div className="relative">
-            <section
+            <div
               id="knowMe"
+              ref={registerSection("knowMe")}
               style={{
                 backgroundImage: `
-          radial-gradient(circle at 50% 100%, rgba(253, 224, 71, 0.4) 0%, transparent 60%),
-          radial-gradient(circle at 50% 100%, rgba(251, 191, 36, 0.4) 0%, transparent 70%),
-          radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.5) 0%, transparent 80%)
-        `,
+                  radial-gradient(circle at 50% 100%, rgba(253, 224, 71, 0.4) 0%, transparent 60%),
+                  radial-gradient(circle at 50% 100%, rgba(251, 191, 36, 0.4) 0%, transparent 70%),
+                  radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.5) 0%, transparent 80%)
+                `,
               }}
             >
               <HeroSection />
               <AboutSection />
-            </section>
+            </div>
 
-            <section id="projects">
+            <div id="projects" ref={registerSection("projects")}>
               <ProjectSection />
-            </section>
+            </div>
 
-            <section id="skills">
+            <div id="skills" ref={registerSection("skills")}>
               <Skills />
-            </section>
 
-            <section id="resume">
+              {/* <div id="resume" ref={registerSection("resume")}> */}
               <ResumeSection />
-            </section>
+              {/* </div> */}
+            </div>
 
-            {/* contact section wrapper */}
-            <Toaster />
-            <section id="contact">
+            <div id="contact" ref={registerSection("contact")}>
               <ContactSection />
-            </section>
+            </div>
           </div>
         </div>
       </div>
-      {/* <div className="h-12 bg-background block md:hidden"></div> */}
     </>
   );
 };
