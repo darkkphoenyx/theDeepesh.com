@@ -86,10 +86,10 @@ const HeroSection = () => {
         />
       </div>
       <p
-        className="absolute hidden md:block -right-100 mt-105 transform rotate-90 text-7xl font-bold m-0 p-0 mix-blend-luminosity"
+        className="absolute hidden md:block -right-95 mt-105 transform rotate-90 text-7xl font-bold m-0 p-0 mix-blend-luminosity"
         style={{ letterSpacing: "30px" }}
       >
-        Keep Scrolling
+        darkkphoenyx
       </p>
 
       <div className="h-[50vh] hidden md:block"></div>

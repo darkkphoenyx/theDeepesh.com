@@ -5,14 +5,12 @@ import project from "../../../appwrite/APIs";
 import { updateIsOpen } from "../../../redux/projectSlice";
 import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 import { ArrowRight, GithubIcon } from "lucide-react";
-import ProjectCard from "./ExtendedProjectCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "../../../../node_modules/swiper/swiper.css";
-// import "swiper/css/pagination";
-// import "swiper/css";
 
 import { Pagination, Autoplay } from "swiper/modules";
+import { Dialog, DialogContent } from "../../../components/ui/dialog";
 
 const ProjectButtons = [
   {
@@ -35,10 +33,12 @@ const ProjectButtons = [
 
 const ProjectSection = () => {
   const [projectData, setProjectData] = useState<Project[]>([]);
-  const [isCardOpen, setIsCardOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [cardType, setCardType] = useState<string>(ProjectButtons[0].name);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     const fetceProjects = async () => {
       try {
@@ -60,12 +60,14 @@ const ProjectSection = () => {
 
   const openProjectCard = (project: Project) => {
     dispatch(updateIsOpen(project));
-    setIsCardOpen(true);
+    setSelectedProject(project);
+    setIsDialogOpen(true);
   };
 
   const closeProjectCard = () => {
     dispatch(updateIsOpen(null));
-    setIsCardOpen(false);
+    setSelectedProject(null);
+    setIsDialogOpen(false);
   };
 
   return (
@@ -78,6 +80,7 @@ const ProjectSection = () => {
         >
           Project Section
         </h2>
+
         {/* Project Buttons */}
         <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center mb-10">
           {ProjectButtons.map((btn) => (
@@ -95,7 +98,7 @@ const ProjectSection = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid (desktop) */}
         <div
           data-aos="fade-up"
           className="lg:grid-cols-3 md:grid-cols-2 gap-8 hidden md:grid"
@@ -112,7 +115,7 @@ const ProjectSection = () => {
               <CardDescription className="text-gray-300 p-0 md:text-start text-center line-clamp-3 overflow-ellipsis">
                 {project.details}
               </CardDescription>
-              {/* Tech Stack */}
+
               <ul className="flex gap-2 md:justify-start items-center justify-center flex-wrap">
                 {project.techStack.slice(0, 4).map((stack) => (
                   <li
@@ -128,34 +131,46 @@ const ProjectSection = () => {
                   </button>
                 )}
               </ul>
-              <a rel="noopener noreferrer">
-                <button className="flex cursor-none items-center justify-center gap-2 border-none w-full rounded-full px-3 py-2 bg-primary/20 hover:bg-primary/40 hover:scale-105 transition-all font-medium text-primary">
-                  View Project
-                  <GithubIcon />
-                </button>
-              </a>
+
+              <button className="flex cursor-none items-center justify-center gap-2 border-none w-full rounded-full px-3 py-2 bg-primary/20 hover:bg-primary/40 hover:scale-105 transition-all font-medium text-primary">
+                View Project
+                <GithubIcon />
+              </button>
             </Card>
           ))}
         </div>
 
-        {/* Modal (Project Card) */}
-        {isCardOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center md:p-0 p-4">
-            <div
-              onClick={closeProjectCard}
-              className="absolute inset-0 bg-black/80 backdrop-blur-xs"
-            />
-            <div className="relative bg-background border border-gray-700 rounded-3xl w-full md:w-1/2 md:px-12 px-4 z-50 md:mt-0 mt-12 pt-6 md:pt-12 md:pb-6">
-              <ProjectCard />
-              <button
-                onClick={closeProjectCard}
-                className="absolute top-4 right-4 text-5xl hover:text-secondary h-auto hover:scale-110 transition-all"
-              >
-                &times;
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Modal Dialog (single dialog) */}
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent className="cursor-default">
+            {selectedProject ? (
+              <>
+                <h2 className="text-xl font-semibold mb-2">
+                  {selectedProject.name}
+                </h2>
+                <p className="text-gray-300 mb-4">{selectedProject.details}</p>
+                <ul className="flex gap-2 flex-wrap">
+                  {selectedProject.techStack.map((stack) => (
+                    <li
+                      key={stack}
+                      className="px-3 py-2 text-sm text-secondary bg-secondary/10 rounded-full"
+                    >
+                      {stack}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={closeProjectCard}
+                  className="mt-4 bg-primary px-4 py-2 rounded text-black"
+                >
+                  Close
+                </button>
+              </>
+            ) : (
+              <p>Loading...</p>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* mobile swiper */}
         <div className="block md:hidden">
@@ -173,11 +188,10 @@ const ProjectSection = () => {
             className="mySwiper"
           >
             {projectData.map((project) => (
-              <SwiperSlide>
+              <SwiperSlide key={project.$id}>
                 <Card
                   onClick={() => openProjectCard(project)}
                   className="lg:p-8 p-6 hover:bg-gradient-to-b from-primary/30 to-transparent rounded-3xl shadow-none hover:border-primary border-gray-600 bg-gray-800 transition-all hover:text-primary text-white"
-                  key={project.$id}
                 >
                   <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center">
                     {project.name}
@@ -201,12 +215,11 @@ const ProjectSection = () => {
                       </button>
                     )}
                   </ul>
-                  <a rel="noopener noreferrer">
-                    <button className="flex cursor-none items-center justify-center gap-2 border-none w-full rounded-full px-3 py-2 bg-primary/20 hover:bg-primary/40 hover:scale-105 transition-all font-medium text-primary">
-                      View Project
-                      <GithubIcon />
-                    </button>
-                  </a>
+
+                  <button className="flex cursor-none items-center justify-center gap-2 border-none w-full rounded-full px-3 py-2 bg-primary/20 hover:bg-primary/40 hover:scale-105 transition-all font-medium text-primary">
+                    View Project
+                    <GithubIcon />
+                  </button>
                 </Card>
               </SwiperSlide>
             ))}
