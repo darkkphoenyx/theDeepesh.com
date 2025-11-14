@@ -40,7 +40,7 @@ const Timeline: React.FC = () => {
     {
       year: "2023 - Present",
       title: "BSc.CSIT Attended",
-      where: "Texas International College",
+      where: "Tribhuvan University",
       icon: GraduationCap,
       description:
         "Working toward a Bachelor’s degree in CSIT, where I’m developing skills in software development, exploring algorithmic techniques, and strengthening my understanding of core computing concepts",
