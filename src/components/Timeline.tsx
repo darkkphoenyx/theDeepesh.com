@@ -91,7 +91,7 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="bg-background md:rounded-t-[50px] rounded-t-[30px]">
-      <div className="md:py-20 max-md:pt-20 max-w-7xl mx-auto">
+      <div className="md:py-20 max-md:pt-20 max-w-7xl mx-auto px-4">
         <h2
           data-aos="fade-up"
           className="md:text-5xl text-center text-4xl font-bold mb-20 text-secondary"
@@ -102,7 +102,7 @@ const Timeline: React.FC = () => {
 
         <div ref={timelineRef} className="relative">
           {/* Static Center Line */}
-          <div className="absolute left-4  lg:left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200/20 rounded-full overflow-hidden">
+          <div className="absolute left-4 lg:left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200/20 rounded-full overflow-hidden">
             {/* Animated Scroll Progress Line */}
             <div
               className="absolute top-0 left-0 w-full bg-primary transition-[height] duration-75 ease-linear rounded-full"
