@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Outfit:wght@100..900&family=Viga&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -161,8 +162,8 @@
 /* priestacy font */
 @font-face {
   font-family: "Priestacy";
-  src: url("/fonts/Priestacy.woff2") format("woff2"),
-    url("/fonts/Priestacy.woff") format("woff");
+  src: url("/Priestacy.woff2") format("woff2"),
+    url("/Priestacy.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -182,7 +183,8 @@ body {
   cursor: none;
 }
 
-html.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: auto !important;
-  scroll-behavior: auto !important;
+@layer base {
+  .font-edu {
+    font-family: "Edu NSW ACT Cursive", cursive;
+  }
 }
