@@ -104,7 +104,7 @@ const Homepage = () => {
         >
           <div className="mx-[10px]">
             <div
-              className={`flex items-center justify-between w-full mx-auto py-4 px-4 transition-all duration-300 ease-in-out`}
+              className={`flex items-center justify-between w-full mx-auto py-4 md:px-4 pl-2 transition-all duration-300 ease-in-out`}
               style={{
                 maxWidth: width,
               }}
