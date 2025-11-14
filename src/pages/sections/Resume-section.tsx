@@ -87,7 +87,7 @@ const ResumeSection = () => {
             <CardTitle className="text-secondary md:text-4xl text-3xl text-center md:text-left">
               Download Resume
             </CardTitle>
-            <CardDescription className="text-white md:text-base text-center md:text-left">
+            <CardDescription className="text-gray-300 md:text-base text-center md:text-left">
               Curious about what I bring to the table? Dive into the interactive
               preview below or grab the full PDF for the whole story, skills,
               experience, and a dash of personality included!

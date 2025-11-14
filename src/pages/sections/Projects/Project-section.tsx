@@ -10,7 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../../node_modules/swiper/swiper.css";
 
 import { Pagination, Autoplay } from "swiper/modules";
-import { Dialog, DialogContent } from "../../../components/ui/dialog";
+
+import DialogProjectCard from "./DialogProjectCard";
 
 const ProjectButtons = [
   {
@@ -64,12 +65,6 @@ const ProjectSection = () => {
     setIsDialogOpen(true);
   };
 
-  const closeProjectCard = () => {
-    dispatch(updateIsOpen(null));
-    setSelectedProject(null);
-    setIsDialogOpen(false);
-  };
-
   return (
     <section className="bg-background relative">
       <div className="max-w-7xl mx-auto px-4 py-24 h-auto overflow-hidden">
@@ -109,7 +104,7 @@ const ProjectSection = () => {
               className="lg:p-8 p-6 hover:bg-gradient-to-b from-primary/30 to-transparent rounded-3xl shadow-none hover:border-primary border-gray-600 bg-gray-800 transition-all hover:text-primary text-white"
               key={project.$id}
             >
-              <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center">
+              <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center text-secondary">
                 {project.name}
               </CardTitle>
               <CardDescription className="text-gray-300 p-0 md:text-start text-center line-clamp-3 overflow-ellipsis">
@@ -141,36 +136,11 @@ const ProjectSection = () => {
         </div>
 
         {/* Modal Dialog (single dialog) */}
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent className="cursor-default">
-            {selectedProject ? (
-              <>
-                <h2 className="text-xl font-semibold mb-2">
-                  {selectedProject.name}
-                </h2>
-                <p className="text-gray-300 mb-4">{selectedProject.details}</p>
-                <ul className="flex gap-2 flex-wrap">
-                  {selectedProject.techStack.map((stack) => (
-                    <li
-                      key={stack}
-                      className="px-3 py-2 text-sm text-secondary bg-secondary/10 rounded-full"
-                    >
-                      {stack}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={closeProjectCard}
-                  className="mt-4 bg-primary px-4 py-2 rounded text-black"
-                >
-                  Close
-                </button>
-              </>
-            ) : (
-              <p>Loading...</p>
-            )}
-          </DialogContent>
-        </Dialog>
+        <DialogProjectCard
+          selectedProject={selectedProject}
+          isDialogOpen={isDialogOpen}
+          setIsDialogOpen={setIsDialogOpen}
+        />
 
         {/* mobile swiper */}
         <div className="block md:hidden">
@@ -193,7 +163,7 @@ const ProjectSection = () => {
                   onClick={() => openProjectCard(project)}
                   className="lg:p-8 p-6 hover:bg-gradient-to-b from-primary/30 to-transparent rounded-3xl shadow-none hover:border-primary border-gray-600 bg-gray-800 transition-all hover:text-primary text-white"
                 >
-                  <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center">
+                  <CardTitle className="text-2xl font-semibold p-0 md:text-start text-center text-secondary">
                     {project.name}
                   </CardTitle>
                   <CardDescription className="text-gray-300 p-0 md:text-start text-center line-clamp-3 overflow-ellipsis">

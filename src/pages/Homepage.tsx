@@ -9,12 +9,14 @@ import ResumeSection from "./sections/Resume-section";
 import ContactSection from "./sections/Contact-section";
 import { Toaster } from "../components/ui/sonner";
 import { useIsMd } from "../utils/useIsMid";
+import Timeline from "../components/Timeline";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "knowMe" },
-  { id: 2, nav: "Projects", link: "projects" },
-  { id: 3, nav: "Skills", link: "skills" },
-  { id: 4, nav: "Contact", link: "contact" },
+  { id: 2, nav: "Experiences", link: "experiences" },
+  { id: 3, nav: "Projects", link: "projects" },
+  { id: 4, nav: "Skills", link: "skills" },
+  { id: 5, nav: "Contact", link: "contact" },
 ];
 
 const Homepage = () => {
@@ -230,6 +232,10 @@ const Homepage = () => {
             >
               <HeroSection />
               <AboutSection />
+            </div>
+
+            <div id="experiences" ref={registerSection("experiences")}>
+              <Timeline />
             </div>
 
             <div id="projects" ref={registerSection("projects")}>
