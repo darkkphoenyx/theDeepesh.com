@@ -41,7 +41,7 @@ const ResumeSection = () => {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/6895e1d3000af086be94/view?project=688f064e0012515eb6e8&mode=admin"
+                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/69186f4b002c4228ecd2/view?project=688f064e0012515eb6e8&mode=admin"
                   alt="resume png"
                   style={{
                     width: "100%",
@@ -94,7 +94,7 @@ const ResumeSection = () => {
             </CardDescription>
             <div className="flex justify-center md:justify-start mt-4">
               <a href={pdfDownloadLink} className="w-full">
-                <button className="flex items-center justify-center gap-2 lg:w-1/2 w-full text-background cursor-pointer bg-secondary py-4 rounded-full md:text-2xl text-xl font-medium hover:scale-105 transition-all shadow-[0px_0px_20px_10px_rgba(255,223,176,0.2)]">
+                <button className="flex items-center justify-center gap-2 lg:w-1/2 w-full text-background cursor-none bg-secondary py-4 rounded-full md:text-2xl text-xl font-medium hover:scale-105 transition-all shadow-[0px_0px_20px_10px_rgba(255,223,176,0.2)]">
                   <Download />
                   Download Now
                 </button>

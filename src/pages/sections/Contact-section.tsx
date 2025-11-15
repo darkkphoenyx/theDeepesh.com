@@ -23,11 +23,11 @@ const ContactSection = () => {
           best to get back to you!
         </p>
       </div>
-      <div className="grid md:grid-cols-2 mt-18 mb-8 space-y-8 max-w-7xl mx-auto">
-        <div className="px-4">
+      <div className="grid md:grid-cols-5 grid-cols-1 my-18 items-center max-md:space-y-8 max-w-7xl mx-auto w-full">
+        <div className="px-4 col-span-3">
           <ContactForm />
         </div>
-        <div className="px-4">
+        <div className="px-4 col-span-2">
           <Card className="flex flex-row space-y-4 rounded-3xl p-4 bg-gray-800 border border-gray-600 gap-4 w-full">
             <span className="flex gap-2 items-center md:text-xl font-medium text-primary">
               <Mail
@@ -47,10 +47,10 @@ const ContactSection = () => {
             </CardTitle>
           </Card>
 
-          <div className="grid grid-cols-2 gap-4 rounded-3xl border border-gray-600 bg-gray-800 p-4 mt-8">
+          <div className="grid gap-4 rounded-3xl border border-gray-600 bg-gray-800 p-4 mt-8">
             {/* instagram */}
             <a href="https://www.instagram.com/sun_deepesh/" target="_blank">
-              <Card className="text-white p-2 justify-center hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-red-500 to-pink-500 border-none">
+              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-red-500 to-pink-500 border-none">
                 <Instagram className="block md:hidden" size={20} />
                 <Instagram className="hidden md:block" size={28} />
                 <p className="font-semibold md:text-lg text-sm">Instagram</p>
@@ -63,7 +63,7 @@ const ContactSection = () => {
               href="https://www.facebook.com/deepesh.sunuwar.08"
               target="_blank"
             >
-              <Card className="text-white p-2 justify-center hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-500 to-indigo-700 border-none">
+              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-500 to-indigo-700 border-none">
                 <Facebook className="block md:hidden" size={20} />
                 <Facebook
                   className="hidden md:block fill-white"
@@ -78,14 +78,14 @@ const ContactSection = () => {
               href="https://www.linkedin.com/in/deepeshsunuwar/"
               target="_blank"
             >
-              <Card className="text-white p-2 justify-center hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-600 to-indigo-900 border-none">
+              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-600 to-indigo-900 border-none">
                 <Linkedin className="block md:hidden" size={20} />
                 <Linkedin className="hidden md:block" size={28} />
                 <p className="font-semibold md:text-lg text-sm">LinkedIn</p>
               </Card>
             </a>
             <a href="https://www.github.com/darkkphoenyx" target="_blank">
-              <Card className="text-white p-2 justify-center hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-gray-900 to-gray-700 border-none">
+              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-gray-900 to-gray-700 border-none">
                 <Github className="block md:hidden" size={20} />
                 <Github className="hidden md:block" size={28} />
                 <p className="font-semibold md:text-lg text-sm">GitHub</p>
