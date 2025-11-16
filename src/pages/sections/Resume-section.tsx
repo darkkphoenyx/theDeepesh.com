@@ -1,11 +1,11 @@
-import { Download } from "lucide-react";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
-import "aos/dist/aos.css";
-import project from "../../appwrite/APIs";
 import { useEffect, useState } from "react";
+import project from "../../appwrite/APIs";
 import PixelTransition from "../../animations/Animations/PixelTransition/PixelTransition";
+import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import { Download } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { SkillsImages } from "./Projects/SkillsImagesExport";
+
 
 const ResumeSection = () => {
   const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();
@@ -41,7 +41,7 @@ const ResumeSection = () => {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/69186f4b002c4228ecd2/view?project=688f064e0012515eb6e8&mode=admin"
+                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/69199082003d8c596c03/view?project=688f064e0012515eb6e8&mode=admin"
                   alt="resume png"
                   style={{
                     width: "100%",
