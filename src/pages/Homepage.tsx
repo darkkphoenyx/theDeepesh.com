@@ -28,7 +28,7 @@ const Homepage = () => {
       <Toaster position="top-right" />
       <div className="bg-background text-primary">
         {/* NAVBAR */}
-        <Navbar />
+        <Navbar sectionRefs={sectionRefs} />
 
         {/* PARTICLES BACKGROUND + SECTIONS */}
         <div className="relative z-10 bg-background">

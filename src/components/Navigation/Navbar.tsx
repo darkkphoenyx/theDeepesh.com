@@ -10,12 +10,15 @@ const NavRoutes = [
   { id: 5, nav: "Contact", link: "contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({
+  sectionRefs,
+}: {
+  sectionRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
+}) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const navRef = useRef<HTMLElement | null>(null);
-  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);

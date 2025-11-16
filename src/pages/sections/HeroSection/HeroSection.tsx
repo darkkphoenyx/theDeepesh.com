@@ -35,7 +35,12 @@ const HeroSection = () => {
             isMobileMenuOpen ? "-z-10" : "z-10"
           }`}
         >
-          <img data-aos="zoom-in" src="./profile.gif" alt="owner gif" loading="lazy" />
+          <img
+            data-aos="zoom-in"
+            src="./profile.gif"
+            alt="owner gif"
+            loading="lazy"
+          />
 
           <h1 className="hidden md:block relative max-w-4xl w-full mx-auto px-10 md:px-4">
             <span
