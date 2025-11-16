@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export const useIsMd = () => {
-  const [isMd, setIsMd] = useState(window.innerWidth >= 1080);
+export const useIsMid = () => {
+  const [isMid, setIsMid] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    const handler = () => setIsMd(window.innerWidth >= 1080);
+    const handler = () => setIsMid(window.innerWidth >= 1024);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
   }, []);
 
-  return isMd;
+  return isMid;
 };

@@ -1,6 +1,6 @@
-import FlowingMenu from "../../animations/Components/FlowingMenu/FlowingMenu";
+import FlowingMenu from "../../../animations/Components/FlowingMenu/FlowingMenu";
 import Marquee from "react-fast-marquee";
-import { SkillsImages } from "./Projects/SkillsImagesExport";
+import { SkillsImages } from "../../../components/ProjectSection/SkillsImagesExport";
 
 const demoItems = [
   {

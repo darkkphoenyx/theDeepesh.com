@@ -9,6 +9,7 @@ import DialogProjectCard from "../../../components/ProjectSection/DialogProjectC
 import MobileProjectSlider from "../../../components/ProjectSection/MobileProjectSlider";
 import PaginationSection from "../../../components/ProjectSection/PaginationSection";
 import DesktopGrid from "../../../components/ProjectSection/DesktopGrid";
+import { useImagePreloader } from "../../../utils/useImagePreloader";
 
 const ProjectButtons = [
   {
@@ -38,6 +39,9 @@ const ProjectSection = () => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch();
   const ITEMS_PER_PAGE = 6;
+
+  //caching all the images for projects
+  useImagePreloader(projectData);
 
   useEffect(() => {
     setPage(1);

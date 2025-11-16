@@ -2,7 +2,7 @@ import { Skeleton } from "../ui/skeleton";
 
 const ProjectCardLoader = ({ cards }: { cards: number }) => {
   return (
-    <div className="bg-background">
+    <div className="bg-background hidden md:block">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 h-[700px] gap-8 px-4">
         {Array(cards)
           .fill(null)
