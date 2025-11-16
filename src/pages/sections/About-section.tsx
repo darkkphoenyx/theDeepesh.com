@@ -3,6 +3,7 @@ import HoverPreview from "../../components/HoverPreview";
 import { Card, CardDescription, CardTitle } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 
+
 const AboutSection = () => {
   return (
     <div className=" bg-gray-800 md:rounded-t-[50px] rounded-t-[30px] overflow-hidden">
@@ -21,25 +22,63 @@ const AboutSection = () => {
             data-aos-delay="50"
             className="text-lg leading-relaxed text-secondary max-w-xl mx-auto md:mx-0"
           >
-            Hi👋! I'm Deepesh. I'm a passionate developer with strong expertise
-            in frontend development using{" "}
-            <HoverPreview label="React" url="https://reactjs.org" />,{" "}
+            Hi👋! I'm Deepesh. I'm a passionate Frontend Developer with strong
+            expertise in{" "}
             <HoverPreview
+              skill="nextjs"
+              label="Next.js"
+              url="https://nextjs.org/"
+            />
+            ,{" "}
+            <HoverPreview
+              skill="react"
+              label="React"
+              url="https://reactjs.org"
+            />
+            ,{" "}
+            <HoverPreview
+              skill="typescript"
               label="Typescript"
               url="https://www.typescriptlang.org/"
             />
             ,{" "}
-            <HoverPreview label="Tailwind CSS" url="https://tailwindcss.com/" />
-            , <HoverPreview label="ShadCN" url="https://ui.shadcn.com/" />
-            . I focus on building clean, responsive, and scalable user
-            interfaces with reusable components and optimized performance.
+            <HoverPreview
+              skill="tailwind"
+              label="Tailwind CSS"
+              url="https://tailwindcss.com/"
+            />
+            , and{" "}
+            <HoverPreview
+              skill="shadcn"
+              label="ShadCN"
+              url="https://ui.shadcn.com/"
+            />
+            . I have a strong grasp of state management (Redux, Zustand, &
+            Context APIs), form handling (React Hook Form), integrating REST
+            APIs (Axios/Fetch) and performance optimization. I have a keen eye
+            for detail, while ensuring responsiveness, and scalable user
+            interfaces with reusable components and maintainable code.
             <br />
             <br />
             While frontend is my core strength, I’m actively expanding my
             backend skills in{" "}
-            <HoverPreview label="Node.JS" url="https://nodejs.org/en" />
-            , <HoverPreview label="PHP" url="https://www.php.net/" />, and{" "}
-            <HoverPreview label="PostgreSQL" url="https://www.postgresql.org" />{" "}
+            <HoverPreview
+              skill="expressjs"
+              label="Express.js"
+              url="https://expressjs.com/"
+            />
+            ,{" "}
+            <HoverPreview
+              skill="postgresql"
+              label="PostgreSQL"
+              url="https://www.postgresql.org"
+            />
+            , and{" "}
+            <HoverPreview
+              skill="mongodb"
+              label="MongoDB"
+              url="https://www.mongodb.com/"
+            />{" "}
             to become a well-rounded full-stack developer. Driven by curiosity
             and problem-solving, I enjoy owning projects end-to-end and
             continuously learning new technologies to deliver impactful and
