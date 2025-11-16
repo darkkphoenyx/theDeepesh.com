@@ -162,8 +162,7 @@
 /* priestacy font */
 @font-face {
   font-family: "Priestacy";
-  src: url("/priestacy-webfont.woff2") format("woff2"),
-    url("/priestacy-webfont.woff") format("woff");
+  src: url("/priestacy-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
