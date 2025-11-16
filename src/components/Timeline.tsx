@@ -24,11 +24,11 @@ const Timeline: React.FC = () => {
       where: "Brahmabyte Lab",
       icon: BriefcaseBusiness,
       description:
-        "Worked on ChatBoq (SaaS product) using Next.js, handled state management with Zustand and Redux Toolkit, integrated APIs with Axios, and gained experience with SSR, WebSockets, email templates, and TipTap.",
+        "Worked on ChatBoq (SaaS product) using Next.js, handled state management with Zustand and Redux Toolkit, integrated REST APIs with Axios, and gained experience with SSR, sockets.io, email templates, and TipTap editor for web.",
       side: "right",
     },
     {
-      year: "APR 2025 - JUL 2025",
+      year: "MAR 2025 - JUN 2025",
       title: "Full Stack Developer Internship",
       where: "Mindxcape",
       icon: BriefcaseBusiness,
@@ -36,15 +36,23 @@ const Timeline: React.FC = () => {
         "Worked as a Full Stack Developer Intern at Mindxcape, where I developed and maintained Aktiverian Nepal’s website, collaborated on client web applications, and gained hands-on experience with Next.js and monorepo workflows.",
       side: "left",
     },
-
     {
       year: "2023 - Present",
       title: "BSc.CSIT Attended",
       where: "Tribhuvan University",
       icon: GraduationCap,
       description:
-        "Working toward a Bachelor’s degree in CSIT, where I’m developing skills in software development, exploring algorithmic techniques, and strengthening my understanding of core computing concepts",
+        "Working toward a Bachelor’s degree in CSIT, where I’m developing skills in software development, exploring algorithmic techniques, and strengthening my understanding of core computing concepts.",
       side: "right",
+    },
+    {
+      year: "2020 - 2022",
+      title: "+2 Science",
+      where: "Nepal APF School",
+      icon: GraduationCap,
+      description:
+        "Completed my Higher Secondary Education with a focus on Science and Mathematics.",
+      side: "left",
     },
   ];
 
