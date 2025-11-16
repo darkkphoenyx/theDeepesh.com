@@ -1,16 +1,16 @@
-import HeroSection from "./sections/HeroSection/Hero-section";
+import HeroSection from "./sections/HeroSection/HeroSection";
 import Particles from "../animations/Backgrounds/Particles/Particles";
-import AboutSection from "./sections/About/About-section";
-import Skills from "./sections/Skills/Skills";
-import ProjectSection from "./sections/Projects/Project-section";
-import ResumeSection from "./sections/Resume/Resume-section";
+import AboutSection from "./sections/About/AboutSection";
+import Skills from "./sections/Skills/SkillsSection";
+import ProjectSection from "./sections/Projects/ProjectSection";
+import ResumeSection from "./sections/Resume/ResumeSection";
 
 import { Toaster } from "../components/ui/sonner";
 
 import { useCallback, useRef } from "react";
 import Navbar from "../components/Navigation/Navbar";
 import Timeline from "../components/Timeline";
-import ContactSection from "./sections/Contact/Contact-section";
+import ContactSection from "./sections/Contact/ContactSection";
 
 const Homepage = () => {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});

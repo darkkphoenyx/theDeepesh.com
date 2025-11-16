@@ -6,6 +6,7 @@ import {
   PaginationItem,
   PaginationLink,
 } from "../ui/pagination";
+import { useIsMid } from "../../utils/useIsMid";
 
 const PaginationSection = ({
   page,
@@ -16,7 +17,8 @@ const PaginationSection = ({
   setPage: React.Dispatch<SetStateAction<number>>;
   page: number;
 }) => {
-  const ITEMS_PER_PAGE = 6;
+  const isMid = useIsMid();
+  const ITEMS_PER_PAGE = isMid ? 6 : 4;
   return (
     <>
       {projectLength > 6 && (

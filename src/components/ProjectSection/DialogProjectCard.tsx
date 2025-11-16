@@ -1,6 +1,7 @@
 import { Cpu, Eye, Github, Link } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
 import type { Project } from "../../interfaces/projectCrad.interface";
+import { useState } from "react";
 
 type DialogCardProps = {
   selectedProject: Project | null;
@@ -19,6 +20,8 @@ const DialogProjectCard = ({
   selectedProject,
   setIsDialogOpen,
 }: DialogCardProps) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogContent className="cursor-default rounded-3xl w-[900px]">
@@ -37,9 +40,13 @@ const DialogProjectCard = ({
             <p className="text-gray-300">{selectedProject.details}</p>
             <div className="grid md:grid-cols-2 md:gap-6 gap-2 md:mt-4">
               <img
-                className="w-full md:h-[250px] h-[150px] object-cover rounded-md"
+                className={`w-full md:h-[250px] h-[150px] object-cover rounded-md transition-opacity duration-300 ${
+                  loaded ? "opacity-100" : "opacity-0"
+                }`}
                 src={selectedProject.image}
                 alt={selectedProject.name}
+                loading="lazy"
+                onLoad={() => setLoaded(true)}
               />
               <div className="flex flex-col gap-4 justify-center max-md:mt-2">
                 <div className="md:flex hidden flex-col gap-4 bg-white/10 rounded-xl md:p-2 p-4">

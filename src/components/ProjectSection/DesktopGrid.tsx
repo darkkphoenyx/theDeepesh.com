@@ -2,6 +2,7 @@ import { GithubIcon } from "lucide-react";
 import type { Project } from "../../interfaces/projectCrad.interface";
 import { Card, CardDescription, CardTitle } from "../ui/card";
 import ProjectCardLoader from "./ProjectCardLoader";
+import { useIsMid } from "../../utils/useIsMid";
 
 const DesktopGrid = ({
   page,
@@ -14,7 +15,8 @@ const DesktopGrid = ({
   projectData: Project[];
   openProjectCard: (project: Project) => void;
 }) => {
-  const ITEMS_PER_PAGE = 6;
+  const isMid = useIsMid();
+  const ITEMS_PER_PAGE = isMid ? 6 : 4;
   return (
     <>
       {loading ? (

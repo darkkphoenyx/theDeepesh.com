@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useIsMd } from "../../utils/useIsMid";
+import { useIsMid } from "../../utils/useIsMid";
 import { Menu, X } from "lucide-react";
 
 const NavRoutes = [
@@ -61,14 +61,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
 
-  const isMd = useIsMd();
+  const isMid = useIsMid();
 
   //remove mobile nav on desktop and tablet
   useEffect(() => {
-    if (isMd) setIsMobileMenuOpen(false);
-  }, [isMd]);
+    if (isMid) setIsMobileMenuOpen(false);
+  }, [isMid]);
 
-  const width = isMd ? (scrolled ? "80rem" : "90%") : "100%";
+  const width = isMid ? (scrolled ? "80rem" : "90%") : "100%";
   return (
     <nav
       ref={navRef}
