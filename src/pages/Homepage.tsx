@@ -2,14 +2,15 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import HeroSection from "../pages/sections/Hero-section";
 import Particles from "../animations/Backgrounds/Particles/Particles";
-import AboutSection from "./sections/About-section";
+
 import Skills from "./sections/Skills";
 import ProjectSection from "./sections/Projects/Project-section";
 import ResumeSection from "./sections/Resume-section";
-import ContactSection from "./sections/Contact-section";
+import ContactSection from "./sections/Contact/Contact-section";
 import { Toaster } from "../components/ui/sonner";
 import { useIsMd } from "../utils/useIsMid";
 import Timeline from "../components/Timeline";
+import AboutSection from "./sections/About/About-section";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "knowMe" },

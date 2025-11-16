@@ -127,7 +127,6 @@ const ProjectSection = () => {
 
         {/* mobile swiper */}
         <MobileProjectSlider
-          loading={loading}
           openProjectCard={openProjectCard}
           projectData={projectData}
         />

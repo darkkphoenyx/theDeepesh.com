@@ -1,8 +1,7 @@
 import { BookOpen, GraduationCap } from "lucide-react";
-import HoverPreview from "../../components/HoverPreview";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
-import { Badge } from "../../components/ui/badge";
-
+import HoverPreview from "../../../components/HoverPreview";
+import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
+import { Badge } from "../../../components/ui/badge";
 
 const AboutSection = () => {
   return (
