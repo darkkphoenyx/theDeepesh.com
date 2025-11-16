@@ -1,6 +1,38 @@
 import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
-import { Card, CardTitle } from "../../components/ui/card";
 import ContactForm from "./ContactForm";
+import { Card, CardTitle } from "../../components/ui/card";
+import { cn } from "../../lib/utils";
+
+const contactData = [
+  {
+    id: 1,
+    name: "Instagram",
+    link: "https://www.instagram.com/sun_deepesh/",
+    icon: Instagram,
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    id: 2,
+    name: "Facebook",
+    link: "https://www.facebook.com/deepesh.sunuwar.08",
+    icon: Facebook,
+    color: "from-blue-500 to-indigo-700",
+  },
+  {
+    id: 3,
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/deepeshsunuwar/",
+    icon: Linkedin,
+    color: "from-blue-600 to-indigo-900",
+  },
+  {
+    id: 4,
+    name: "GitHub",
+    link: "https://www.github.com/darkkphoenyx",
+    icon: Github,
+    color: "from-gray-900 to-gray-700",
+  },
+];
 
 const ContactSection = () => {
   return (
@@ -49,48 +81,21 @@ const ContactSection = () => {
 
           <div className="grid gap-4 rounded-3xl border border-gray-600 bg-gray-800 p-4 mt-8">
             {/* instagram */}
-            <a href="https://www.instagram.com/sun_deepesh/" target="_blank">
-              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-red-500 to-pink-500 border-none">
-                <Instagram className="block md:hidden" size={20} />
-                <Instagram className="hidden md:block" size={28} />
-                <p className="font-semibold md:text-lg text-sm">Instagram</p>
-              </Card>
-            </a>
-
-            {/* facebook  */}
-            {/* facebook link has some issues */}
-            <a
-              href="https://www.facebook.com/deepesh.sunuwar.08"
-              target="_blank"
-            >
-              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-500 to-indigo-700 border-none">
-                <Facebook className="block md:hidden" size={20} />
-                <Facebook
-                  className="hidden md:block fill-white"
-                  size={28}
-                  stroke="1"
-                />
-                <p className="font-semibold md:text-lg text-sm">Facebook</p>
-              </Card>
-            </a>
-            {/* linkedin */}
-            <a
-              href="https://www.linkedin.com/in/deepeshsunuwar/"
-              target="_blank"
-            >
-              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-bl from-blue-600 to-indigo-900 border-none">
-                <Linkedin className="block md:hidden" size={20} />
-                <Linkedin className="hidden md:block" size={28} />
-                <p className="font-semibold md:text-lg text-sm">LinkedIn</p>
-              </Card>
-            </a>
-            <a href="https://www.github.com/darkkphoenyx" target="_blank">
-              <Card className="text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr from-gray-900 to-gray-700 border-none">
-                <Github className="block md:hidden" size={20} />
-                <Github className="hidden md:block" size={28} />
-                <p className="font-semibold md:text-lg text-sm">GitHub</p>
-              </Card>
-            </a>
+            {contactData.map((card) => (
+              <a href="https://www.instagram.com/sun_deepesh/" target="_blank">
+                <Card
+                  className={cn(
+                    `text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr ${card.color} border-none`
+                  )}
+                >
+                  <card.icon className="block md:hidden" size={20} />
+                  <card.icon className="hidden md:block" size={28} />
+                  <p className="font-semibold md:text-lg text-sm">
+                    {card.name}
+                  </p>
+                </Card>
+              </a>
+            ))}
           </div>
         </div>
       </div>
