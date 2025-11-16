@@ -1,7 +1,7 @@
 import { useTransform, motion, useScroll } from "framer-motion";
-import CircularText from "../../animations/TextAnimations/CircularText/CircularText";
-import TextPressure from "../../animations/TextAnimations/TextPressure/TextPressure";
-import ConnectWithMe from "../../components/ConnectWithMe";
+import CircularText from "../../../animations/TextAnimations/CircularText/CircularText";
+import TextPressure from "../../../animations/TextAnimations/TextPressure/TextPressure";
+import ConnectWithMe from "../../../components/ConnectWithMe";
 import { useLayoutEffect, useState } from "react";
 
 const HeroSection = () => {

@@ -1,5 +1,5 @@
 import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
-import ContactForm from "../ContactForm";
+import ContactForm from "../../../components/Contact/ContactForm";
 import { Card, CardTitle } from "../../../components/ui/card";
 import { cn } from "../../../lib/utils";
 

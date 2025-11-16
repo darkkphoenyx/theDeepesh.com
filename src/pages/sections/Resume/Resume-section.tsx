@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import project from "../../appwrite/APIs";
-import PixelTransition from "../../animations/Animations/PixelTransition/PixelTransition";
-import { Card, CardDescription, CardTitle } from "../../components/ui/card";
+import project from "../../../appwrite/APIs";
+import PixelTransition from "../../../animations/Animations/PixelTransition/PixelTransition";
+import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 import { Download } from "lucide-react";
 import Marquee from "react-fast-marquee";
-import { SkillsImages } from "./Projects/SkillsImagesExport";
-
+import { SkillsImages } from "../../../components/ProjectSection/SkillsImagesExport";
 
 const ResumeSection = () => {
   const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();

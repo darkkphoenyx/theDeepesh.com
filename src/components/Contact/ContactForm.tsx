@@ -9,8 +9,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../../components/ui/form";
-import { Button } from "../../components/ui/button";
+} from "../ui/form";
+import { Button } from "../ui/button";
 import { toast } from "sonner";
 const contactSchema = z.object({
   name: z.string().min(1, "Kindly enter your name"),
