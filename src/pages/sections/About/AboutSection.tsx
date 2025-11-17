@@ -116,7 +116,7 @@ const AboutSection = () => {
           className="w-full md:w-1/2 flex justify-center h-max"
         >
           <img
-            src="./theDeepesh.jpg"
+            src="./theDeepesh.webp"
             alt="owner profile"
             className="w-full max-w-md h-auto object-contain md:scale-92 rounded-3xl shadow-[0px_0px_100px_10px_rgba(255,223,176,0.2)]"
           />
