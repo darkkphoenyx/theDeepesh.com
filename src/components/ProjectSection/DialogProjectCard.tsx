@@ -91,7 +91,7 @@ const DialogProjectCard = ({
                     <a
                       target="_blank"
                       rel="noopener"
-                      href={selectedProject.deployLink}
+                      href={selectedProject.github}
                     >
                       <button className="py-2 md:text-lg text-sm text-secondary bg-secondary/10 rounded-lg h-fit w-full hover:scale-[102%] transition-all hover:bg-secondary/50 flex gap-2 items-center justify-center cursor-pointer">
                         <Github className="max-md:p-0.5" />
