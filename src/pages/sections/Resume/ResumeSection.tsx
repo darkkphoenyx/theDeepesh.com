@@ -106,8 +106,9 @@ const ResumeSection = () => {
       {/* skills marquee */}
       <Marquee direction="left" className="md:py-6">
         {SkillsImages.map((image) => (
-          <div className="my-10 mx-20">
-            <image.logo size={64} />
+          <div key={image.text} className="my-10 md:mx-20 mx-10">
+            <image.logo size={64} className="hidden md:block" />
+            <image.logo size={40} className="block md:hidden" />
           </div>
         ))}
       </Marquee>
