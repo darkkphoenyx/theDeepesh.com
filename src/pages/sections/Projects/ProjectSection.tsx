@@ -10,6 +10,7 @@ import MobileProjectSlider from "../../../components/ProjectSection/MobileProjec
 import PaginationSection from "../../../components/ProjectSection/PaginationSection";
 import DesktopGrid from "../../../components/ProjectSection/DesktopGrid";
 import { useImagePreloader } from "../../../utils/useImagePreloader";
+import Heading from "../../../shared/Heading";
 
 const ProjectButtons = [
   {
@@ -82,13 +83,7 @@ const ProjectSection = () => {
   return (
     <section className="bg-background relative">
       <div className="max-w-7xl mx-auto px-4 py-24 h-auto overflow-hidden">
-        <h2
-          data-aos="fade-up"
-          className="md:text-5xl text-4xl text-center font-bold mb-12 text-secondary"
-          style={{ fontFamily: "Priestacy" }}
-        >
-          Project Section
-        </h2>
+        <Heading title="Project Section" />
 
         {/* Project Buttons */}
         <div className="grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center mb-10">

@@ -1,7 +1,8 @@
 import { BookOpen, GraduationCap } from "lucide-react";
-import HoverPreview from "../../../components/HoverPreview";
+import HoverPreview from "../../../components/Resume/HoverPreview";
 import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
+import Heading from "../../../shared/Heading";
 
 const AboutSection = () => {
   return (
@@ -9,13 +10,7 @@ const AboutSection = () => {
       <section className="overflow-x-hidden z-10 w-full h-auto max-w-7xl mx-auto lg:py-20 md:py-20 py-20 text-primary flex flex-col md:flex-row items-center gap-12 md:gap-8 md:pl-4 md:p-0 px-4">
         {/* Text Section */}
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2
-            data-aos="fade-right"
-            className="md:text-5xl text-4xl font-bold mb-12 text-secondary"
-            style={{ fontFamily: "Priestacy" }}
-          >
-            Know Me
-          </h2>
+          <Heading title="Know Me" />
           <div
             data-aos="fade-right"
             data-aos-delay="50"

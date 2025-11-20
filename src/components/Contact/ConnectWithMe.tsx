@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
-import RotatingText from "../animations/TextAnimations/RotatingText/RotatingText";
+import RotatingText from "../../animations/TextAnimations/RotatingText/RotatingText";
 
 const Links = [
   {

@@ -9,7 +9,7 @@ import { Toaster } from "../components/ui/sonner";
 
 import { useCallback, useRef } from "react";
 import Navbar from "../components/Navigation/Navbar";
-import Timeline from "../components/Timeline";
+import Timeline from "../components/Experience/Timeline";
 import ContactSection from "./sections/Contact/ContactSection";
 
 const Homepage = () => {

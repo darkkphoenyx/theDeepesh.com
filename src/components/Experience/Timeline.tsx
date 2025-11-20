@@ -10,6 +10,7 @@ interface TimelineItem {
   side: "left" | "right";
 }
 import { BriefcaseBusiness, GraduationCap } from "lucide-react";
+import Heading from "../../shared/Heading";
 
 const Timeline: React.FC = () => {
   const [progressHeight, setProgressHeight] = useState(0);
@@ -100,13 +101,7 @@ const Timeline: React.FC = () => {
   return (
     <div className="bg-background md:rounded-t-[50px] rounded-t-[30px]">
       <div className="md:py-20 max-md:pt-20 max-w-7xl mx-auto px-4">
-        <h2
-          data-aos="fade-up"
-          className="md:text-5xl text-center text-4xl font-bold mb-20 text-secondary"
-          style={{ fontFamily: "Priestacy" }}
-        >
-          Professional Timeline
-        </h2>
+        <Heading title="Professional Timeline" />
 
         <div ref={timelineRef} className="relative">
           {/* Static Center Line */}

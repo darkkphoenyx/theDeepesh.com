@@ -2,6 +2,7 @@ import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
 import ContactForm from "../../../components/Contact/ContactForm";
 import { Card, CardTitle } from "../../../components/ui/card";
 import { cn } from "../../../lib/utils";
+import Heading from "../../../shared/Heading";
 const contactData = [
   {
     id: 1,
@@ -43,12 +44,7 @@ const ContactSection = () => {
       }}
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h1
-          className="lg:text-5xl text-4xl font-bold text-secondary lg:mb-12 mb-8"
-          style={{ fontFamily: "Priestacy" }}
-        >
-          Get in Touch
-        </h1>
+        <Heading title="Get in Touch" />
         <p className="text-secondary/80 px-4">
           Whether you have a question or just wanna to say "HI", I'll try my
           best to get back to you!

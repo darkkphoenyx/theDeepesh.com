@@ -5,6 +5,7 @@ import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 import { Download } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { SkillsImages } from "../../../components/ProjectSection/SkillsImagesExport";
+import Heading from "../../../shared/Heading";
 
 const ResumeSection = () => {
   const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();
@@ -24,13 +25,7 @@ const ResumeSection = () => {
   return (
     <div className="bg-background">
       <section className="py-20 max-w-7xl mx-auto px-4 ">
-        <h2
-          data-aos="fade-up"
-          className="md:text-5xl text-center text-4xl font-bold mb-12 text-secondary"
-          style={{ fontFamily: "Priestacy" }}
-        >
-          My Resume
-        </h2>
+        <Heading title="My Resume" />
         <div className="border border-gray-600 flex md:flex-nowrap flex-wrap items-center justify-center p-6 md:p-12 rounded-3xl m-0 shadow-none w-full gap-8 bg-gray-800 overflow-x-hidden">
           <div
             data-aos="fade-right"
