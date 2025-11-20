@@ -44,7 +44,7 @@ const ContactSection = () => {
     >
       <div className="max-w-7xl mx-auto text-center">
         <h1
-          className="lg:text-5xl md:text-4xl font-bold text-secondary text-3xl lg:mb-12 mb-8"
+          className="lg:text-5xl text-4xl font-bold text-secondary lg:mb-12 mb-8"
           style={{ fontFamily: "Priestacy" }}
         >
           Get in Touch
