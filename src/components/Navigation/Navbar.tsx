@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useIsMid } from "../../utils/useIsMid";
 import { Menu, X } from "lucide-react";
+import Heading from "../../shared/Heading";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "knowMe" },
@@ -99,15 +100,11 @@ const Navbar = ({
                 handleRefNavigation("knowMe");
               }}
             >
-              <h1
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-once="true"
-                className="text-2xl md:text-3xl font-bold cursor-none"
-                style={{ fontFamily: "Priestacy" }}
-              >
-                theDeepesh
-              </h1>
+              <Heading
+                animation="fade-right"
+                title="theDeepesh"
+                className="text-2xl md:text-3xl font-bold cursor-none text-primary"
+              />
             </a>
           </div>
 

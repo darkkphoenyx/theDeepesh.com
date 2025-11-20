@@ -3,6 +3,7 @@ import CircularText from "../../../animations/TextAnimations/CircularText/Circul
 import TextPressure from "../../../animations/TextAnimations/TextPressure/TextPressure";
 import ConnectWithMe from "../../../components/Contact/ConnectWithMe";
 import { useLayoutEffect, useState } from "react";
+import Heading from "../../../shared/Heading";
 
 const HeroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,14 +64,10 @@ const HeroSection = () => {
             />
           </h1>
           <h1 className="block md:hidden relative w-full">
-            <span
-              data-aos="fade-up"
-              data-aos-once="true"
+            <Heading
               className="absolute left-1/2 md:-top-3 -top-7 -translate-x-1/2 text-center text-secondary text-4xl z-10"
-              style={{ fontFamily: "Priestacy" }}
-            >
-              Hey There,
-            </span>
+              title="Hey There,"
+            />
             <p
               data-aos="fade-up"
               data-aos-once="true"
