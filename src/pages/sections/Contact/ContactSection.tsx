@@ -2,7 +2,6 @@ import { Facebook, Github, Instagram, Linkedin, Mail } from "lucide-react";
 import ContactForm from "../../../components/Contact/ContactForm";
 import { Card, CardTitle } from "../../../components/ui/card";
 import { cn } from "../../../lib/utils";
-
 const contactData = [
   {
     id: 1,
@@ -82,11 +81,7 @@ const ContactSection = () => {
           <div className="grid gap-4 rounded-3xl border border-gray-600 bg-gray-800 p-4 mt-8">
             {/* instagram */}
             {contactData.map((card) => (
-              <a
-                key={card.id}
-                href="https://www.instagram.com/sun_deepesh/"
-                target="_blank"
-              >
+              <a key={card.id} href={card.link} target="_blank">
                 <Card
                   className={cn(
                     `text-white p-2 justify-center cursor-none hover:scale-x-103 transition-all gap-2 flex flex-row items-center bg-gradient-to-tr ${card.color} border-none`

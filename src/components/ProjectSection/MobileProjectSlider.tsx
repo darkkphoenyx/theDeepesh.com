@@ -18,7 +18,7 @@ const MobileProjectSlider = ({
   return (
     <>
       {loading ? (
-        <div className="rounded-3xl bg-secondary/20 animate-pulse p-8 flex flex-col gap-8">
+        <div className="hidden rounded-3xl bg-secondary/20 animate-pulse p-8 max-md:flex flex-col gap-8">
           <Skeleton className="h-8 bg-secondary/30" />
           <Skeleton className="h-14 bg-secondary/30" />
 
