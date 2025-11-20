@@ -43,14 +43,13 @@ const HeroSection = () => {
             loading="lazy"
           />
 
+          {/* Desktop */}
           <h1 className="hidden md:block relative max-w-4xl w-full mx-auto px-10 md:px-4">
-            <span
-              data-aos="fade-up"
-              className="absolute left-1/2 md:-top-3 -top-5 -translate-x-1/2 text-center text-secondary text-3xl md:text-5xl z-10"
-              style={{ fontFamily: "Priestacy" }}
-            >
-              Hey There,
-            </span>
+            <Heading
+              className="absolute left-1/2 md:-top-3 -top-7 -translate-x-1/2 text-center text-secondary text-4xl z-10"
+              title="Hey There,"
+              once
+            />
             <TextPressure
               text="I'm Deepesh!"
               flex={true}
@@ -63,10 +62,13 @@ const HeroSection = () => {
               strokeColor="#ff0000"
             />
           </h1>
+
+          {/* Mobile */}
           <h1 className="block md:hidden relative w-full">
             <Heading
               className="absolute left-1/2 md:-top-3 -top-7 -translate-x-1/2 text-center text-secondary text-4xl z-10"
               title="Hey There,"
+              once
             />
             <p
               data-aos="fade-up"
