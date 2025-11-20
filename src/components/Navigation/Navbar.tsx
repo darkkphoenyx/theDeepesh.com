@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useIsMid } from "../../utils/useIsMid";
 import { Menu, X } from "lucide-react";
 import Heading from "../../shared/Heading";
-import { NavLink } from "react-router";
 
 const NavRoutes = [
   { id: 1, nav: "Know me", link: "knowMe" },
