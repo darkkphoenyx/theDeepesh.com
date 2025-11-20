@@ -32,24 +32,19 @@ const demoItems = [
 const Skills = () => {
   return (
     <>
-      <div className="bg-gray-800 md:py-10 py-4 md:rounded-t-[50px] rounded-t-[30px]">
+      <div className="bg-gray-800 md:py-20 py-16 md:rounded-t-[50px] rounded-t-[30px]">
         <section className="h-auto flex flex-col w-full">
-          {/* <h1
+          <h1
             data-aos="fade-up"
-            className="text-5xl font-semibold text-center text-secondary"
+            className="lg:text-5xl text-4xl font-semibold text-center text-secondary mb-10"
             style={{ fontFamily: "Priestacy" }}
           >
             My Skills
-          </h1> */}
+          </h1>
           <Marquee direction="right" className="md:py-6">
             {SkillsImages.map((image) => (
-              <div className="flex gap-2 items-center md:text-2xl text-xl m-10  font-medium">
-                <img
-                  className="md:h-10 md:w-10 w-8 h-8 rounded-md"
-                  src={image.logo}
-                  alt={image.alt}
-                />
-                <p>{image.text}</p>
+              <div key={image.text} className="my-10 mx-20">
+                <image.logo size={64} />
               </div>
             ))}
           </Marquee>
