@@ -10,9 +10,9 @@ I'm a creative developer with a knack for building clean, scalable, and user-fri
 
 - 💻 **Technologies I work with**:
 
-  - Front-end: React, Next.js, TypeScript and Tailwind CSS
-  - Back-end: Node.js, Express, MongoDB, Firebase
-  - Tools: Git, GitHub, Vercel, Netlify, Docker
+  - Front-end: React, Next.js, TypeScript, Tailwind CSS and Shadcn 
+  - Back-end: Node.js, Express, MongoDB, Firebase, Appwrite
+  - Tools: Git, GitHub, Vercel, Netlify, Docker, Redux Toolkit, Zustand, sockets.io, REST APIs, Axios.
 
 - 🔭 Currently working at **[BrahmaByte Lab](https://brahmabytelab.com)**
 - 📫 How to reach me: **[LinkedIn](https://www.linkedin.com/in/deepeshsunuwar/)**
@@ -27,7 +27,3 @@ If you're interested in collaborating or have any questions, feel free to reach 
 
 - 📧 Email: **sun.08deepesh@gmail.com**
 - 🌐 Portfolio: **[thedeepesh.vercel.app](https://thedeepesh.vercel.app/)**
-
----
-
-Feel free to modify this template to better fit your style and content! You can also add sections like **Contributing**, **License**, or any other information that might be relevant.
