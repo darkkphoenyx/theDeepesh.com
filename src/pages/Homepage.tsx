@@ -28,6 +28,7 @@ const Homepage = () => {
       <Toaster position="top-right" />
       <div className="bg-background text-primary">
         {/* NAVBAR */}
+
         <Navbar sectionRefs={sectionRefs} />
 
         {/* PARTICLES BACKGROUND + SECTIONS */}

@@ -1,5 +1,5 @@
 import { BookOpen, GraduationCap } from "lucide-react";
-import HoverPreview from "../../../components/Resume/HoverPreview";
+import HoverPreview from "../../../components/About/HoverPreview";
 import { Card, CardDescription, CardTitle } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import Heading from "../../../shared/Heading";
