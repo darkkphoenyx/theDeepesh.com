@@ -154,7 +154,7 @@ const Navbar = ({
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden px-4 pb-4 w-full">
+        <div className="md:hidden px-4 pb-4 w-full overflow-hidden">
           <ul className="flex flex-col gap-4">
             {NavRoutes.map((link, index) => (
               <li
