@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useIsMid } from "../../utils/useIsMid";
-import { Menu, X } from "lucide-react";
 import Heading from "../../shared/Heading";
 
 const NavRoutes = [
@@ -21,6 +20,12 @@ const Navbar = ({
   const [activeSection, setActiveSection] = useState("");
   const navRef = useRef<HTMLElement | null>(null);
 
+  //hamburger lines
+  const lines = [
+    isMobileMenuOpen ? "-rotate-45 translate-y-3" : "",
+    isMobileMenuOpen ? "opacity-0" : "opacity-100",
+    isMobileMenuOpen ? "rotate-45 -translate-y-2" : "",
+  ];
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
@@ -140,13 +145,27 @@ const Navbar = ({
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden" id="mobile-menu">
-            <button
+            {/* <button
               onClick={toggleMobileMenu}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle mobile navigation menu"
             >
               {isMobileMenuOpen ? <X size={36} /> : <Menu size={36} />}
+            </button> */}
+            <button
+              className="flex flex-col gap-2"
+              onClick={toggleMobileMenu}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile navigation menu"
+            >
+              {lines.map((cls, i) => (
+                <div
+                  key={i}
+                  className={`h-[2px] bg-primary w-7 transition-all rounded-full duration-300 ${cls}`}
+                />
+              ))}
             </button>
           </div>
         </div>
