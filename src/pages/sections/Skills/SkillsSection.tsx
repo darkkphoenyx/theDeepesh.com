@@ -25,7 +25,7 @@ const demoItems = [
   {
     link: "#",
     text: "Flow ",
-    subHeader: "When I code, I lose sense of time.",
+    subHeader: "When I code, I losse sense of time.",
     image: "https://picsum.photos/600/400?random=4",
   },
 ];
