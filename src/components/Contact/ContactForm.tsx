@@ -89,7 +89,7 @@ const ContactForm = () => {
                       type="text"
                       className="border-b-2 outline-none text-secondary cursor-none"
                       {...field}
-                      placeholder="john.doe@gmail.com"
+                      placeholder="e.g: john.doe@gmail.com"
                     />
                   </FormControl>
                   <FormMessage />
@@ -116,7 +116,7 @@ const ContactForm = () => {
                         const value = e.target.value.replace(/\D/g, ""); // Remove non-digits
                         field.onChange(value);
                       }}
-                      placeholder="+977-9800000000"
+                      placeholder="e.g: +977-9800000000"
                     />
                   </FormControl>
                   <FormMessage />
@@ -135,7 +135,7 @@ const ContactForm = () => {
                 <FormControl>
                   <textarea
                     className="border-b-2 cursor-none outline-none text-secondary resize-none overflow-hidden w-full leading-relaxed"
-                    placeholder="Glad to meet yaa!"
+                    placeholder="e.g: Glad to meet yaa!"
                     {...field}
                   />
                 </FormControl>
