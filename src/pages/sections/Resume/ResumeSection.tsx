@@ -35,7 +35,7 @@ const ResumeSection = () => {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/69199082003d8c596c03/view?project=688f064e0012515eb6e8&mode=admin"
+                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/6939aad2002c4f64922f/view?project=688f064e0012515eb6e8&mode=admin"
                   alt="resume png"
                   style={{
                     width: "100%",
