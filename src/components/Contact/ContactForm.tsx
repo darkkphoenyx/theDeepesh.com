@@ -68,7 +68,7 @@ const ContactForm = () => {
                     type="text"
                     className="border-b-2 outline-none text-secondary cursor-none"
                     {...field}
-                    placeholder="Deepesh Sunuwar"
+                    placeholder="e.g: John Doe"
                   />
                 </FormControl>
                 <FormMessage />
@@ -89,7 +89,7 @@ const ContactForm = () => {
                       type="text"
                       className="border-b-2 outline-none text-secondary cursor-none"
                       {...field}
-                      placeholder="sun.08deepesh@gmail.com"
+                      placeholder="john.doe@gmail.com"
                     />
                   </FormControl>
                   <FormMessage />
@@ -116,7 +116,7 @@ const ContactForm = () => {
                         const value = e.target.value.replace(/\D/g, ""); // Remove non-digits
                         field.onChange(value);
                       }}
-                      placeholder="+977-9818414667"
+                      placeholder="+977-9800000000"
                     />
                   </FormControl>
                   <FormMessage />
