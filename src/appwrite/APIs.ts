@@ -41,7 +41,7 @@ export class Projects {
     try {
       return this.storage.getFileDownload(
         config.appwriteBucketId,
-        "6939aa26003c1e3c39fa"
+        "69451b22001d70ea4924"
       );
     } catch (error) {
       throw new Error("Error getting PDF download.");
