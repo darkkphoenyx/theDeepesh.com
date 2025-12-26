@@ -16,18 +16,39 @@ export class Projects {
   }
 
   // Services
+  // getProjectDetails = async (type: string) => {
+  //   try {
+  //     if (type === "All Projects") {
+  //       return await this.database.listDocuments(
+  //         config.appwriteDatabaseId,
+  //         config.appwriteCollectionId1
+  //       );
+  //     }
+  //     return await this.database.listDocuments(
+  //       config.appwriteDatabaseId,
+  //       config.appwriteCollectionId1,
+  //       [Query.equal("type", type)]
+  //     );
+  //   } catch (error) {
+  //     throw new Error(
+  //       `Appwrite Error :: getProjectDetails() failed :: ${error}`
+  //     );
+  //   }
+  // };
+
   getProjectDetails = async (type: string) => {
     try {
-      if (type === "All Projects") {
-        return await this.database.listDocuments(
-          config.appwriteDatabaseId,
-          config.appwriteCollectionId1
-        );
+      //to get latest project at first
+      const queries = [Query.orderDesc("$createdAt")];
+
+      if (type !== "All Projects") {
+        queries.push(Query.equal("type", type));
       }
+
       return await this.database.listDocuments(
         config.appwriteDatabaseId,
         config.appwriteCollectionId1,
-        [Query.equal("type", type)]
+        queries
       );
     } catch (error) {
       throw new Error(
