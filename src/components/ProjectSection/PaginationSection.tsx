@@ -68,7 +68,7 @@ const PaginationSection = ({
                       className={` ${
                         page === p
                           ? "bg-secondary/20 text-secondary"
-                          : "hover:bg-secondary/30 hover:text-secondary"
+                          : "hover:bg-secondary/30 hover:text-secondary text-secondary"
                       }`}
                       size={undefined}
                     >

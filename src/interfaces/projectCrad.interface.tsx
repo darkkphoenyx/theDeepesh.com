@@ -7,4 +7,5 @@ export interface Project {
   deployLink: string;
   techStack: string[];
   type: string;
+  domain: string;
 }
