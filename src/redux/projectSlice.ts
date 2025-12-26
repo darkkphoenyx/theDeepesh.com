@@ -10,6 +10,7 @@ const initialState: Project = {
   deployLink: "",
   techStack: [],
   type: "",
+  domain: "",
 };
 
 export const projectSlice = createSlice({
