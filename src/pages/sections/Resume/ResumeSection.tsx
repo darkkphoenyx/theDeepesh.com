@@ -10,6 +10,9 @@ import Heading from "../../../shared/Heading";
 const ResumeSection = () => {
   const [pdfDownloadLink, setPdfDownloadLink] = useState<string | undefined>();
 
+  //cv preview image
+  const CV_COVER = import.meta.env.VITE_CV_COVER;
+
   useEffect(() => {
     const getPdfLink = async () => {
       try {
@@ -35,7 +38,7 @@ const ResumeSection = () => {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://syd.cloud.appwrite.io/v1/storage/buckets/688fa4ae0013e56f4d51/files/69451b3c003921e528e2/view?project=688f064e0012515eb6e8&mode=admin"
+                  src={CV_COVER}
                   alt="resume png"
                   style={{
                     width: "100%",

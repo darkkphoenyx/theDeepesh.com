@@ -48,11 +48,11 @@ export class Projects {
       return await this.database.listDocuments(
         config.appwriteDatabaseId,
         config.appwriteCollectionId1,
-        queries
+        queries,
       );
     } catch (error) {
       throw new Error(
-        `Appwrite Error :: getProjectDetails() failed :: ${error}`
+        `Appwrite Error :: getProjectDetails() failed :: ${error}`,
       );
     }
   };
@@ -60,10 +60,8 @@ export class Projects {
   //to get the pdf download link
   getFileDownload = async () => {
     try {
-      return this.storage.getFileDownload(
-        config.appwriteBucketId,
-        "69451b22001d70ea4924"
-      );
+      const CV_ID = import.meta.env.VITE_PDF;
+      return this.storage.getFileDownload(config.appwriteBucketId, CV_ID);
     } catch (error) {
       throw new Error("Error getting PDF download.");
     }
@@ -86,7 +84,7 @@ export class Projects {
         config.appwriteDatabaseId,
         config.appwriteCollectionId3,
         ID.unique(),
-        { name, message, phone, email }
+        { name, message, phone, email },
       );
     } catch (error) {
       throw new Error(`Error commenting:: ${error}`);
